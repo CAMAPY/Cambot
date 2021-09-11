@@ -71,8 +71,7 @@ async def rename(name):
 @client.event
 async def on_message(message):  
     if "ironic" in message.content.lower():
-        if message.author.id == 680298420338294796:
-            await message.delete()
+        if message.author.id == 578865305632243712:
             await message.channel.send("Learn to use `ironic` properly u dumbfuck")
     await client.process_commands(message)
 
@@ -105,12 +104,12 @@ async def close(ctx):
     print("Ok bye! :wave:")
 
 
-@client.command()
+@client.command(hidden =True)
 async def load(ctx, extension):
     client.load_extension(f"cogs.{extension}")
     await ctx.send(f'{extension} has been loaded')
 
-@client.command()
+@client.command(hidden = True)
 async def unload(ctx, extension):
     client.unload_extension(f"cogs.{extension}")
     await ctx.send(f'{extension} has been unloaded')
