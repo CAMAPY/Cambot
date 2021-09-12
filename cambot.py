@@ -33,14 +33,14 @@ async def ping(ctx):
 
 
 
-@client.event
+@client.event()
 async def on_message(message): 
     possible_responses = [ 'hello', 'suppers', 'yo wassup', 'stfu dumbass', 'what do u want this time?', 'ok now what?', 'hello daddy :drooling_face:' ] 
     if "cambot" in message.content.lower():
         await message.channel.send(f"{random.choice(possible_responses)} {message.author.mention}")
     await client.process_commands(message)
 
-@client.event
+@client.event()
 async def on_message(message):  
     if "^" in message:
         if message.author.id == 398429963990335489:
@@ -68,7 +68,7 @@ async def rename(name):
     await client.user.edit(username=name)
 
 
-@client.event
+@client.event()
 async def on_message(message):  
     if "ironic" in message.content.lower():
         if message.author.id == 578865305632243712:
@@ -76,7 +76,7 @@ async def on_message(message):
     await client.process_commands(message)
 
 
-@client.event
+@client.event()
 async def on_message(message):  
     if "fap" in message.content.lower():
         if message.author.id == 275609153274380289:
@@ -113,11 +113,6 @@ async def load(ctx, extension):
 async def unload(ctx, extension):
     client.unload_extension(f"cogs.{extension}")
     await ctx.send(f'{extension} has been unloaded')
-
-
-@client.event
-async def on_ready():
-    print(f'Logged on as {client.user}')
 
 
 
