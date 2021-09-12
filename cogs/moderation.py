@@ -72,7 +72,7 @@ class moderation(commands.Cog):
             await message.channel.send(f"{random.choice(possible_responses)} {message.author.mention}")
     @commands.Cog.listener()
     async def on_message(self, message):  
-        if "^" in message:
+        if "^" in message.content:
             if message.author.id == 398429963990335489:
                 await message.channel.send("your mom's exponential weight gain be like")
 
