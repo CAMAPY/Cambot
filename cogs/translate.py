@@ -8,7 +8,7 @@ from discord.ext import commands
 '''Translator cog - Love Archit & Lyric'''
 
 
-class Translate:
+class translate:
     def __init__(self, client):
         self.client = client
 
@@ -52,4 +52,4 @@ class Translate:
 
 
 def setup(client):
-    client.add_cog(Translate(client))
+    client.add_cog(translate(client))
