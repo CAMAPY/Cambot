@@ -55,7 +55,26 @@ class moderation(commands.Cog):
         if "what the fuck did you just fucking say about me, you little bitch?" in message.content.lower():
             await message.channel.send(f"stop. posting. this. it isn't funny, {message.author.mention}")
             await message.delete()
-
+    @commands.Cog.listener()
+    async def on_message(message):  
+        if "fap" in message.content.lower():
+            if message.author.id == 275609153274380289:
+                await message.channel.send("Bruh, koshy don't fap again")
+    @commands.Cog.listener()
+    async def on_message(message):  
+        if "ironic" in message.content.lower():
+            if message.author.id == 578865305632243712:
+                await message.channel.send("Learn to use `ironic` properly u dumbfuck")
+    @commands.Cog.listener()
+    async def on_message(message): 
+        possible_responses = [ 'hello', 'suppers', 'yo wassup', 'stfu dumbass', 'what do u want this time?', 'ok now what?', 'hello daddy :drooling_face:' ] 
+        if "cambot" in message.content.lower():
+            await message.channel.send(f"{random.choice(possible_responses)} {message.author.mention}")
+    @commands.Cog.listener()
+    async def on_message(message):  
+        if "^" in message:
+            if message.author.id == 398429963990335489:
+                await message.channel.send("your mom's exponential weight gain be like")
 
 
 def setup(client):

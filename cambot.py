@@ -33,26 +33,6 @@ async def ping(ctx):
 
 
 
-@client.event()
-async def on_message(message): 
-    possible_responses = [ 'hello', 'suppers', 'yo wassup', 'stfu dumbass', 'what do u want this time?', 'ok now what?', 'hello daddy :drooling_face:' ] 
-    if "cambot" in message.content.lower():
-        await message.channel.send(f"{random.choice(possible_responses)} {message.author.mention}")
-    await client.process_commands(message)
-
-@client.event()
-async def on_message(message):  
-    if "^" in message:
-        if message.author.id == 398429963990335489:
-            await message.channel.send("your mom's exponential weight gain be like")
-    await client.process_commands(message)
-
-
-
-
-
-
-
 @client.command(aliases=['calc'],brief="It calculates....no-brainer really", help = "Operations include: '+', '-', '*', '/','**', '^','sqrt','log','abs', '%','cmp','log10', 'pow', '//', 'factorial', 'ceil', 'copysign', 'fabs' , 'floor', 'fmod', 'frexp', 'fsumi', 'isinfinite', 'isinf', 'isnan', 'ldexp', 'modf', 'trunc', 'exp', 'expm1', 'log1p', 'log2', 'acos', 'asin', 'atan', 'atan2', 'cos', 'hypot', 'sin', 'tan', 'degrees', 'radians', 'acosh', 'asinh', 'atanh', 'cosh', 'sinh', 'tanh', 'erf', 'erfc', 'gamma', 'lgamma', 'pi', 'e'")
 async def calculate(ctx,*,expression):
     expression = expression.replace("^","**")   
@@ -62,30 +42,13 @@ async def calculate(ctx,*,expression):
         
 
 
-@client.command(brief='Renames the bot (only for owner)', hidden = True)
+@client.command(hidden = True)
 @commands.is_owner()
 async def rename(name):
     await client.user.edit(username=name)
 
 
-@client.event()
-async def on_message(message):  
-    if "ironic" in message.content.lower():
-        if message.author.id == 578865305632243712:
-            await message.channel.send("Learn to use `ironic` properly u dumbfuck")
-    await client.process_commands(message)
-
-
-@client.event()
-async def on_message(message):  
-    if "fap" in message.content.lower():
-        if message.author.id == 275609153274380289:
-            await message.delete()
-            await message.channel.send("Bruh, koshy don't fap again")
-    await client.process_commands(message)
-
-
-@client.command(aliases=["s"], brief='Changes the bot\'s playing status.', hidden =True)
+@client.command(hidden =True)
 @commands.is_owner()
 async def status(ctx, *, status=''):            #im the 
     # if status == None:
@@ -95,8 +58,7 @@ async def status(ctx, *, status=''):            #im the
 
 
 
-
-@client.command(aliases=["quit", "q"], brief="Shuts down bot (Only for owner)", hidden = True)
+@client.command(hidden = True)
 @commands.is_owner()
 async def close(ctx):
     await ctx.send(f"Ok bye! :wave:")
@@ -113,6 +75,7 @@ async def load(ctx, extension):
 async def unload(ctx, extension):
     client.unload_extension(f"cogs.{extension}")
     await ctx.send(f'{extension} has been unloaded')
+
 
 
 
