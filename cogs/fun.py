@@ -33,13 +33,14 @@ class Fun(commands.Cog):
     @commands.command(aliases = ["ng"])
     async def numbergame(self,ctx):
         num = random.randint(1,146)
-        await ctx.send(f"And you have to answer question number: {num}")
+        
         if num in range(1,45):
             await ctx.send('https://media.discordapp.net/attachments/862667294428889129/886633593957417000/unknown.png?width=1253&height=701')
         elif num in range(45, 100):
             await ctx.send("https://media.discordapp.net/attachments/862667294428889129/886633647560597584/unknown.png?width=1249&height=701")
         elif num in range(100, 134):
             await ctx.send("https://media.discordapp.net/attachments/862667294428889129/886633720432443432/unknown.png?width=1246&height=701")
+        await ctx.send(f"And you have to answer question number: {num}")
 
 def setup(client):
     client.add_cog(Fun(client))
