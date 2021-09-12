@@ -51,7 +51,7 @@ class moderation(commands.Cog):
         await ctx.send(f'Nickname was changed for `@{member.name}` ')
 
     @commands.Cog.listener()
-    async def on_message(self, message): 
+    async def on_message(message): 
         if "what the fuck did you just fucking say about me, you little bitch?" in message.content.lower():
             await message.channel.send(f"stop. posting. this. it isn't funny, {message.author.mention}")
             await message.delete()
