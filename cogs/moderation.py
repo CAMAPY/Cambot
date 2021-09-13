@@ -62,9 +62,13 @@ class moderation(commands.Cog):
                 await message.channel.send("Bruh, koshy don't fap again")
     @commands.Cog.listener()
     async def on_message(self, message):  
-        if "ironic" in message.content.lower():
-            if message.author.id == 578865305632243712:
-                await message.channel.send("Learn to use `ironic` properly u dumbfuck")
+        if "ironic" in message.content:
+            if message.author.id == 680298420338294796:
+                await message.channel.send("learn to use ironic properly dumbfuck")
+    @commands.Cog.listener()
+    async def on_message(self, message):  
+        if "iwabii" in message.content:
+            await message.channel.send("Ibrahims at it again lmao")
     @commands.Cog.listener()
     async def on_message(self, message): 
         possible_responses = [ 'hello', 'suppers', 'yo wassup', 'stfu dumbass', 'what do u want this time?', 'ok now what?', 'hello daddy :drooling_face:' ] 
