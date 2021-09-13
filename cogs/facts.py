@@ -22,5 +22,8 @@ class facts(commands.Cog):
                 embed.set_footer(text="")
                 await ctx.send(embed=embed)
                 await session.close()
+    @commands.command()
+    async def fact(self,ctx):
+        await ctx.sent(random.choice(open("facts.txt","r").readline()))
 def setup(client):
     client.add_cog(facts(client))
