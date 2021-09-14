@@ -54,7 +54,7 @@ class rps(commands.Cog):
                 await ctx.send(f"*gasps* This isn't possible, i'm rebooting....\nYour choice: `{user_choice}`\nMy choice: `{comp_choice}`")
             elif comp_choice == 'scissors':
                 await ctx.send(f"Huh, we tied.\nYour choice: `{user_choice}`\nMy choice: `{comp_choice}`")
-            players.discard(ctx.author.id)
+        players.discard(ctx.author.id)
 
 def setup(client):
     client.add_cog(rps(client))
