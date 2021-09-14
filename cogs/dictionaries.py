@@ -19,11 +19,15 @@ class rps(commands.Cog):
     @commands.command()
     async def rps(self, ctx):
         rpsGame = ['rock', 'paper', 'scissors']
+        players = set()
+        if ctx.author.id in players:
+            return
+        players.add(ctx.author.id)
         await ctx.send(f"Rock, paper, or scissors? Get ready to lose.")
 
         def check(msg):
             return msg.author == ctx.author and msg.channel == ctx.channel and msg.content.lower() in rpsGame
-
+        
         user_choice = (await self.client.wait_for('message', check=check)).content
 
         comp_choice = random.choice(rpsGame)
@@ -50,7 +54,7 @@ class rps(commands.Cog):
                 await ctx.send(f"*gasps* This isn't possible, i'm rebooting....\nYour choice: `{user_choice}`\nMy choice: `{comp_choice}`")
             elif comp_choice == 'scissors':
                 await ctx.send(f"Huh, we tied.\nYour choice: `{user_choice}`\nMy choice: `{comp_choice}`")
-
+            players.discard(ctx.author.id)
 
 def setup(client):
     client.add_cog(rps(client))
