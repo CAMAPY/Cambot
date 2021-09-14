@@ -24,6 +24,7 @@ class facts(commands.Cog):
                 await session.close()
     @commands.command()
     async def fact(self,ctx):
-        await ctx.send(random.choice(open("facts.txt","r").readline()))
+        await ctx.send(random.choice(open("facts.txt","r").readlines()))
+
 def setup(client):
     client.add_cog(facts(client))
