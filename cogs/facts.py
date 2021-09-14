@@ -26,7 +26,7 @@ class facts(commands.Cog):
     async def fact(self,ctx):
         fact = random.choice(open("facts.txt","r").readlines())
         fax = discord.Embed(title="Random fact", description=f'{fact}')
-        
+        await ctx.send(embed = fax)
 
 def setup(client):
     client.add_cog(facts(client))
