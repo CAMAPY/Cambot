@@ -45,7 +45,7 @@ class moderation(commands.Cog):
 
 
     @commands.command(pass_context=True, brief="Changes nick of people")
-    @commands.has_permissions(administrator=True)
+    @commands.has_permissions(manage_roles=True)
     async def nick(self, ctx, member: MemberConverter, nick):
         await member.edit(nick=nick)
         await ctx.send(f'Nickname was changed for `@{member.name}` ')
