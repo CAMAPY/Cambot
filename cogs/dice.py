@@ -25,6 +25,6 @@ class dice(commands.Cog):
     @commands.command()
     async def choose(self, ctx, choices):
         c = choices.split()
-        await ctx.send(F"By the power vested in me by MakeDumbassDecisions.com, I choose {random.choice(c)}")
+        await ctx.send(F" I choose `{random.choice(c)}`, By the power vested in me by MakeDumbassDecisions.com")
 def setup(client):
     client.add_cog(dice(client))
