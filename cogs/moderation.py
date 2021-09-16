@@ -50,29 +50,26 @@ class moderation(commands.Cog):
         await member.edit(nick=nick)
         await ctx.send(f'Nickname was changed for `@{member.name}` ')
 
-    async def on_message(self, message):
-        if "what the fuck did you just fucking say about me, you little bitch?" in message.content.lower():
-            await message.channel.send(f"stop. posting. this. it isn't funny, {message.author.mention}")
-            await message.delete()
-            
-    async def on_message(self, message):
-        if "fap" in message.content.lower():
-            if message.author.id == 275609153274380289:
-                await message.channel.send("Bruh, koshy don't fap again")
 
-    async def on_message(self, message):
-        if "ironic" in message.content:
-            if message.author.id == 680298420338294796:
-                await message.channel.send("learn to use ironic properly dumbfuck")
-
-    async def on_message(self, message):
-        if "iwabii" in message.content:
-            await message.channel.send("Ibrahims at it again lmao")
-
-    async def on_message(self, message):
+    @commands.Cog.listener()
+    async def on_message(self, message): 
         possible_responses = [ 'hello', 'suppers', 'yo wassup', 'stfu dumbass', 'what do u want this time?', 'ok now what?', 'hello daddy :drooling_face:' ] 
         if "cambot" in message.content.lower():
             await message.channel.send(f"{random.choice(possible_responses)} {message.author.mention}")
+        elif "^" in message.content:
+            if message.author.id == 398429963990335489:
+                await message.channel.send("your mom's exponential weight gain be like")
+        elif "iwabii" in message.content:
+            await message.channel.send("Ibrahims at it again lmao")
+        elif "ironic" in message.content:
+            if message.author.id == 680298420338294796:
+                await message.channel.send("learn to use ironic properly dumbfuck")
+        elif "fap" in message.content.lower():
+            if message.author.id == 275609153274380289:
+                await message.channel.send("Bruh, koshy don't fap again")
+        elif "what the fuck did you just fucking say about me, you little bitch?" in message.content.lower():
+            await message.channel.send(f"stop. posting. this. it isn't funny, {message.author.mention}")
+            await message.delete()
 
 
 def setup(client):
