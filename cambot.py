@@ -26,8 +26,8 @@ async def test(ctx,*, arg):
     
 @client.event
 async def on_message(message):
-    if client.user.mention in message.content.split():
-        await client.say("Hello there, I'm a bot send to learn your ways. My prefix is `;`. Use `;help` if you wanna know more. Get my only fans here: `prawnhub.com/phish`")
+    if client.user.mentioned_in(message):
+        await message.channel.send("Hello there, I'm a bot send to learn your ways. My prefix is `;`. Use `;help` if you wanna know more. Get my only fans here: `prawnhub.com/phish`")
 
 
 @client.command(brief= "Checks bot's ping", hidden = True)
