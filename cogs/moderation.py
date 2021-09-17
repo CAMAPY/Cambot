@@ -76,9 +76,6 @@ class moderation(commands.Cog):
             await message.channel.send("Another your mom joke, rohan?")
         elif "ur mom" in message.content.lower() and message.author.id == 827775549610000395:
             await message.channel.send("Ah the shit-joker strikes again !")
-        elif "@Cambot#0926" in message.content:
-            await message.channel.send("Hello there, I'm a bot send to learn your ways. My prefix is `;`. Use `;help` if you wanna know more. Get my only fans here: `prawnhub.com/phish`")
-            
 
 
 def setup(client):
