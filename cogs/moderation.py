@@ -74,6 +74,9 @@ class moderation(commands.Cog):
             await message.channel.send("Hi Amritesh.")
         elif "your mom" in message.content.lower() and message.author.id == 827775549610000395:
             await message.channel.send("Another your mom joke, rohan?")
+        elif "ur mom" in message.content.lower() and message.author.id == 827775549610000395:
+            await message.channel.send("Ah the shit-joker strikes again !")
+            
 
 
 def setup(client):
