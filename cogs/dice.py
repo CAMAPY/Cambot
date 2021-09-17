@@ -24,7 +24,7 @@ class dice(commands.Cog):
         await ctx.channel.send(f"{numbers}; {number}, {ctx.author.name}")
     @commands.command()
     async def choose(self, ctx, choices):
-        c = choices.split()
-        await ctx.send(F" I choose `{random.choice(c)}`, By the power vested in me by MakeDumbassDecisions.com")
+        await ctx.send(choices.partition(' '))
+        await ctx.send(F" I choose `{random.choice(choices.partition(' '))}`, By the power vested in me by MakeDumbassDecisions.com")
 def setup(client):
     client.add_cog(dice(client))
