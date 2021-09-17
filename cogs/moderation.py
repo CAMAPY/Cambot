@@ -67,7 +67,7 @@ class moderation(commands.Cog):
         elif "fap" in message.content.lower():
             if message.author.id == 275609153274380289:
                 await message.channel.send("Bruh, koshy don't fap again")
-        elif "what the fuck did you just fucking say about me, you little bitch?" in message.content.lower():
+        elif "what the fuck did you just fucking say about me, you little bitch?" in message.content.lower() or "The storm that wipes out the pathetic little thing you call your life" in message.content.lower():
             await message.channel.send(f"stop. posting. this. it isn't funny, {message.author.mention}")
             await message.delete()
         elif "hiiiiiiiiiiiiiii" in message.content.lower():
