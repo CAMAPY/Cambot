@@ -70,8 +70,10 @@ class moderation(commands.Cog):
         elif "what the fuck did you just fucking say about me, you little bitch?" in message.content.lower() or "The storm that wipes out the pathetic little thing you call your life" in message.content.lower():
             await message.channel.send(f"stop. posting. this. it isn't funny, {message.author.mention}")
             await message.delete()
-        elif "hiiiiiiiiiiiiiii" in message.content.lower():
+        elif "hiiiiiiiiiiiiiii" in message.content.lower() and message.author.id == 547308889478135808:
             await message.channel.send("Hi Amritesh.")
+        elif "your mom" in message.content.lower() and message.author.id == 827775549610000395:
+            await message.channel.send("Another your mom joke, rohan?")
 
 
 def setup(client):
