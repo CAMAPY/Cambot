@@ -43,7 +43,6 @@ class moderation(commands.Cog):
             await ctx.send('Messages cleared by {}'.format(ctx.author.mention))
             await ctx.message.delete()
 
-
     @commands.command(pass_context=True, brief="Changes nick of people")
     @commands.has_permissions(manage_nicknames=True)
     async def nick(self, ctx, member: MemberConverter, nick):
@@ -67,8 +66,11 @@ class moderation(commands.Cog):
         elif "fap" in message.content.lower():
             if message.author.id == 275609153274380289:
                 await message.channel.send("Bruh, koshy don't fap again")
-        elif "what the fuck did you just fucking say about me, you little bitch?" in message.content.lower() or "The storm that wipes out the pathetic little thing you call your life" in message.content.lower():
+        elif "what the fuck did you just fucking say about me, you little bitch?" in message.content.lower():
             await message.channel.send(f"stop. posting. this. it isn't funny, {message.author.mention}")
+            await message.delete()
+        elif "The storm that wipes out the pathetic little thing you call your life" in message.content.lower():
+            await message.channel.send(f"nice try dumbass {message.author.mention}")
             await message.delete()
         elif "hiiiiiiiiiiiiiii" in message.content.lower() and message.author.id == 547308889478135808:
             await message.channel.send("Hi Amritesh.")
@@ -76,8 +78,6 @@ class moderation(commands.Cog):
             await message.channel.send("Another your mom joke, rohan?")
         elif "ur mom" in message.content.lower() and message.author.id == 827775549610000395:
             await message.channel.send("Ah the shit-joker strikes again !")
-
-
 
 def setup(client):
     client.add_cog(moderation(client))
