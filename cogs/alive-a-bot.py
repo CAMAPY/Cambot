@@ -23,9 +23,9 @@ class aliveabot(commands.Cog):
         elif "^" in message.content:
             if message.author.id == 398429963990335489:
                 await message.channel.send("your mom's exponential weight gain be like")
-        elif "iwabii" in message.content:
+        elif "iwabii" in message.content.lower():
             await message.channel.send("Ibrahims at it again lmao")
-        elif "ironic" in message.content:
+        elif "ironic" in message.content.lower():
             if message.author.id == 680298420338294796:
                 await message.channel.send("learn to use ironic properly dumbfuck")
         elif "fap" in message.content.lower():
