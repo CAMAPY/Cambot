@@ -63,13 +63,13 @@ async def close(ctx):
 @commands.is_owner()
 async def load(ctx, extension):
     client.load_extension(f"cogs.{extension}")
-    await ctx.send(f'{extension} has been loaded')
+    await ctx.send(f'`{extension}` has been loaded')
 
 @client.command(hidden = True)
 @commands.is_owner()
 async def unload(ctx, extension):
     client.unload_extension(f"cogs.{extension}")
-    await ctx.send(f'{extension} has been unloaded')
+    await ctx.send(f'`{extension}` has been unloaded')
 
 for filename in os.listdir('./cogs'):
     if filename.endswith('.py'):
