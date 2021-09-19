@@ -33,7 +33,7 @@ class Fun(commands.Cog):
         ,"If you were stuck on a deserted island which friend would you want with you?", "What was your childhood nickname (and why)?", "Have you ever cheated on a test?", "Are you scared of dying? Why?", "What do you think is your biggest physical flaw?", "If you could invent anything, what would it be?", "What does your sibling know about you that no one else does?", "If you could be a superhero, what would your power be?", "Given the choice, would you want to hang out with your parents?", "Would you rather eat a pigeon or a subway rat?", "Would you do anything for money?", "What personality traits would cause you to end a friendship?", "Have you ever told a lie during a game of Truth? What was it and why?", "Which person here knows something about you that you wouldn't want revealed?", "Have you ever pretended to be older or younger than you are to be able to do something?", ""]
         await ctx.send(f"{random.choice(truth)}")
 
-    @commands.command(aliases = ["ng"])
+    @commands.command(help = "Get to know your friends with the number game!", brief= "number game vibes",aliases = ["ng"])
     async def numbergame(self,ctx):
         num = random.randint(1,134) 
         if num in range(1,45):
