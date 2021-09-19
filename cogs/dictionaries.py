@@ -16,7 +16,7 @@ class rps(commands.Cog):
 
 
 
-    @commands.command()
+    @commands.command(help = "Play rock-paper-scissors with me!", brief= "Lose at rock-paper-scissors with me")
     async def rps(self, ctx):
         rpsGame = ['rock', 'paper', 'scissors']
         players = set()

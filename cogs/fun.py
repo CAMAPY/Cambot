@@ -15,7 +15,7 @@ class Fun(commands.Cog):
     async def on_ready(self):
         print(f'stalk has been turned on {self.client.user}')
 
-    @commands.command(aliases=["ts"],brief="Literally just replies with whats in your message after the command")
+    @commands.command(aliases=["ts"],brief="Suggest truth questions for the ;truth command", help = "Suggest truth questions for the ;truth command")
     async def truthsuggest(self,ctx,*, arg):
         channel = self.client.get_channel(883983603921453086)
         await ctx.send(f"`{arg}` has been suggested, please wait for it to be verified")
