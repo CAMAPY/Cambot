@@ -36,14 +36,14 @@ class moderation(commands.Cog):
         await member.ban(reason = reason)
         await ctx.send(f'Banned {member.mention}')
     
-    @commands.command(pass_context=True, brief = "deletes multiple messages", help = 'Delete multiple messages (needs admin permissions)')
+    @commands.command(pass_context=True, brief = "Deletes multiple messages", help = 'Delete multiple messages (needs admin permissions)')
     @commands.has_permissions(administrator=True)
     async def purge(self, ctx, limit: int):
             await ctx.channel.purge(limit=limit)
             await ctx.send('Messages cleared by {}'.format(ctx.author.mention))
             await ctx.message.delete()
 
-    @commands.command(pass_context=True, brief="Changes nick of people")
+    @commands.command(pass_context=True, brief="Changes nick of people", help = "Changes nick of people")
     @commands.has_permissions(manage_nicknames=True)
     async def nick(self, ctx, member: MemberConverter, nick):
         await member.edit(nick=nick)

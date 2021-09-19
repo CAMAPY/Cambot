@@ -20,7 +20,7 @@ class Fun(commands.Cog):
         channel = self.client.get_channel(883983603921453086)
         await ctx.send(f"`{arg}` has been suggested, please wait for it to be verified")
         await channel.send(f"{arg}, requested by {ctx.author.name}")
-    @commands.command()
+    @commands.command(help = "Get truth questions" , brief=  "Get truth questions")
     async def truth(self, ctx):
         truth = ['When was the last time you masturbated?', 'If you were a porn-star, would you masturbate to yourself?', 'Tell us one of your pet-peeves', 'What\'s the most embarassing thing you\'ve done?', 
         "What's something about you that you're parents don't know?", "What celebrity would you like to have dinner with? (not exactly as a date)", "What's something that you would erase in the past?", "What's an app that you don't like but still use?", 
