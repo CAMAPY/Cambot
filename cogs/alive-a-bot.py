@@ -42,8 +42,6 @@ class aliveabot(commands.Cog):
         elif "hiiiiiiiiiiiiiii" in message.content.lower() and message.author.id == 547308889478135808:
             await message.channel.send("Hi Amritesh.")
         elif "your mom" in message.content.lower() and message.author.id == 827775549610000395:
-            await message.channel.send("Another your mom joke, rohan?")
-        elif "ur mom" in message.content.lower() and message.author.id == 827775549610000395:
             await message.channel.send("Ah the shit-joker strikes again !")
         elif "rohan" in message.content.lower():
             await message.channel.send("Rawhen*")
