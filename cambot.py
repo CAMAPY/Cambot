@@ -60,11 +60,13 @@ async def close(ctx):
     print("Ok bye! :wave:")
 
 @client.command(hidden =True)
+@commands.is_owner()
 async def load(ctx, extension):
     client.load_extension(f"cogs.{extension}")
     await ctx.send(f'{extension} has been loaded')
 
 @client.command(hidden = True)
+@commands.is_owner()
 async def unload(ctx, extension):
     client.unload_extension(f"cogs.{extension}")
     await ctx.send(f'{extension} has been unloaded')
