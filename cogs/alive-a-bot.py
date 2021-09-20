@@ -17,7 +17,7 @@ class aliveabot(commands.Cog):
 
     @commands.Cog.listener()
     async def on_message(self, message): 
-        possible_responses = [ 'hello', 'suppers', 'yo wassup', 'stfu dumbass', 'what do u want this time?', 'ok now what?', 'hello daddy :drooling_face:' ] 
+        possible_responses = [ 'hello', 'suppers', 'yo wassup', 'stfu dumbass', 'what do u want this time?', 'ok now what?', 'hello daddy :drooling_face:', "bruh", "my name is not to be invoked, he might be close..." ] 
         if "cambot" in message.content.lower():
             await message.channel.send(f"{random.choice(possible_responses)} {message.author.mention}")
         elif "^" in message.content:
