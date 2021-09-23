@@ -22,11 +22,7 @@ async def test(ctx,*, arg):
     channel = client.get_channel(872371310704066633)
     await channel.send(f"{arg}, requested by {ctx.author.name}")
     
-@client.event
-async def on_message(message):
-    if client.user.mentioned_in(message):
-        await message.channel.send("Hello there, I'm a bot send to learn your ways. My prefix is `;`. Use `;help` if you wanna know more. Get my only fans here: `prawnhub.com/phish`")
-    await client.process_commands(message)
+
 @client.command(brief= "Checks bot's ping", hidden = True)
 async def ping(ctx):
     print("Pong")
