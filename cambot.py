@@ -55,6 +55,7 @@ async def close(ctx):
     await client.close()
     print("Ok bye! :wave:")
 
+
 @client.command(hidden =True)
 @commands.is_owner()
 async def load(ctx, extension):

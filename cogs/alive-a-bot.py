@@ -45,6 +45,7 @@ class aliveabot(commands.Cog):
             await message.channel.send("Ah the shit-joker strikes again !")
         elif self.client.user.mentioned_in(message):
             await message.channel.send("Hello there, I'm a bot send to learn your ways. My prefix is `;`. Use `;help` if you wanna know more. Get my only fans here: `prawnhub.com/phish`")
-
+        if message.content.startswith('^botservers'):
+            await message.channel.send("I'm in " + str(len(self.client.guilds)) + " servers!")
 def setup(client):
     client.add_cog(aliveabot(client))
