@@ -12,7 +12,7 @@ class rps(commands.Cog):
 
     @commands.Cog.listener()
     async def on_ready(self):
-        print(f'dictionaries has been turned on {self.client.user}')
+        print(f'`rps` has been turned on {self.client.user}')
 
 
 
