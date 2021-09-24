@@ -5,7 +5,7 @@ from pretty_help import PrettyHelp,DefaultMenu
 import random
 
 
-class Rps(commands.Cog, help = "Rps commands"):
+class Rps(commands.Cog):
 
     def __init__(self,client): 
         self.client = client
