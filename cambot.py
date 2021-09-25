@@ -35,25 +35,6 @@ async def calculate(ctx,*,expression):
     expression = expression.replace("rem", '%')
     await ctx.send(f"{eval(expression)}")
 
-@client.command(hidden = True)
-@commands.is_owner()
-async def rename(name):
-    await client.user.edit(username=name)
-
-@client.command(aliases = ["s"],hidden =True)
-@commands.is_owner()
-async def status(ctx, *, status=''):            #im the 
-    # if status == None:
-    #         status = ''
-    await client.change_presence(status=discord.Status.online, activity=discord.Game(status))
-    await ctx.send(f'launching {status}.')
-
-@client.command(aliases = ["quit", "q"],hidden = True)
-@commands.is_owner()
-async def close(ctx):
-    await ctx.send(f"Ok bye! :wave:")
-    await client.close()
-    print("Ok bye! :wave:")
 
 
 @client.command(hidden =True)
