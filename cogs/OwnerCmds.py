@@ -14,10 +14,10 @@ class OwnerCommands(commands.Cog):
 
     @commands.command()
     async def servers(self, ctx):
-        activeservers = client.guilds
-        for guild in activeservers:
+        servers = self.client.guilds
+        for guild in servers:
             await ctx.send(guild)
-            print(guild)
+
     
     @commands.command(hidden = True)
     @commands.is_owner()
