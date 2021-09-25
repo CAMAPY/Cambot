@@ -7,13 +7,13 @@ from math import *
 import os
 
 
-class ping(commands.Cog, hidden= True):
+class ping(commands.Cog):
 
     def __init__(self,client): 
         self.client = client    
     @commands.Cog.listener()
     async def on_ready(self):
-        print(f'ping reply has been turned on {self.client.user}')
+        print(f'`ping` reply has been turned on {self.client.user}')
 
     @commands.Cog.listener()
     async def on_message(self, message): 
