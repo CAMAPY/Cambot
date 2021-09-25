@@ -10,7 +10,7 @@ import os
 class ping(commands.Cog, hidden= True):
 
     def __init__(self,client): 
-        self.client = client
+        self.client = client    
     @commands.Cog.listener()
     async def on_ready(self):
         print(f'ping reply has been turned on {self.client.user}')
