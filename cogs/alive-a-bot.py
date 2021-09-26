@@ -38,5 +38,20 @@ class aliveabot(commands.Cog):
             await message.delete()
         elif message.content.startswith('^botservers'):
             await message.channel.send("I'm in " + str(len(self.client.guilds)) + " servers!")
+        elif " has an atomic(thats not good btw) pp." in message.content.lower():
+            await message.channel.send("""Good evening, I'm from the National Urology Society and we received your questions sent to our e-mail, and we're pleased to answer:
+
+1) Yes, 3 inches is considered small. We recomend you surgery process;
+
+2) No, it's not usual for the condom to be loose. There's no XS size;
+
+3) Even if 3 inches is quite small, it is still possible for your partner to have an orgasm during sexual relationships, so if it doesn't happen with you like you've mentioned, the lack of competence is your responsibility;
+
+4) No, you cant have a prostate exam, it's only for 50-year-olds or older. Please, do not insist;
+
+5) The attraction for people of the same sex can be a strong sign of homosexuals tendencies;
+
+Any other questions, we're here to help. Have a nice day.""")
+
 def setup(client):
     client.add_cog(aliveabot(client))
