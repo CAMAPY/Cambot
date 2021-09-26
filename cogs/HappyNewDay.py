@@ -1,5 +1,4 @@
 
-import schedule
 import time
 import discord
 import sys
