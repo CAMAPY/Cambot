@@ -18,7 +18,7 @@ class wish(commands.Cog):
         channel = client.get_channel(874866927938449471)
         await channel.send("Happy New Day!")
     # Run job every day at specific HH:MM and next HH:MM:SS
-    schedule.every().day.at("17:15").do(job)
+    schedule.every().day.at("17:20").do(job)
     while True:
         schedule.run_pending()
         time.sleep(1)
