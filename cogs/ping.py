@@ -14,12 +14,15 @@ class ping(commands.Cog):
     @commands.Cog.listener()
     async def on_ready(self):
         print(f'`ping` reply has been turned on {self.client.user}')
+    
+    def check(m):
+        if m.reference is not None and not m.is_system :
+            return True
+        return False
 
     @commands.Cog.listener()
-    async def on_ping(message):
+    async def on_ping(message, check = check):
         if message.mention_everyone:
-            return
-        if message.author:
             return
         else:
                 colors = [0xFFE4E1, 0x00FF7F, 0xD8BFD8, 0xDC143C, 0xFF4500, 0xDEB887, 0xADFF2F, 0x800000, 0x4682B4, 0x006400, 0x808080, 0xA0522D, 0xF08080, 0xC71585, 0xFFB6C1, 0x00CED1]
