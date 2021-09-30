@@ -39,8 +39,8 @@ class OwnerCommands(commands.Cog):
 
     @commands.command(hidden = True)
     @commands.is_owner()
-    async def say(ctx, *,arg):
-        channel = client.get_channel(873983296269348884)
+    async def talk(ctx,*, arg):
+        channel = client.get_channel(872371310704066633)
         await channel.send(f"{arg}")
 
 def setup(client):
