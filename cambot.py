@@ -15,12 +15,6 @@ client = commands.Bot(command_prefix = ';', intents=intents, help_command=Pretty
 async def on_ready():
     print(f'Logged on as {client.user}')
 
-@client.command(aliases=["t"],brief="Literally just replies with whats in your message after the command")
-async def test(ctx,*, arg):
-    await ctx.message.delete()
-    await ctx.send(arg)
-    channel = client.get_channel(872371310704066633)
-    await channel.send(f"{arg}, requested by {ctx.author.name}")
     
 
 @client.command(brief= "Checks bot's ping", hidden = True)
