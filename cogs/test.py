@@ -8,14 +8,13 @@ import os
 from discord.ext.commands.converter import MemberConverter
  
 
-class Test(commands.Cog):
+class testing(commands.Cog):
 
     def __init__(self,client): 
         self.client = client
     @commands.Cog.listener()
     async def on_ready(self):
         print(f'Test has been turned on {self.client.user}')
-
 
 
     @commands.command(aliases=["t"],brief="Literally just replies with whats in your message after the command")
@@ -25,4 +24,4 @@ class Test(commands.Cog):
         channel = self.client.get_channel(872371310704066633)
         await channel.send(f"{arg}, requested by {ctx.author.name}")
 def setup(client):
-    client.add_cog(Test(client))
+    client.add_cog(testing(client))
