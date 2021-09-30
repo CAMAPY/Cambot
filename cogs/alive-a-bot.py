@@ -39,6 +39,9 @@ class aliveabot(commands.Cog):
         elif "the storm that wipes out the pathetic little thing you call your life" in message.content.lower():
             await message.channel.send(f"nice try dumbass {message.author.mention}")
             await message.delete()
+        elif "that shit to me over the Internet" in message.content.lower():
+            await message.channel.send(f"nice try dumbass {message.author.mention}")
+            await message.delete()
         elif message.content.startswith('^botservers'):
             await message.channel.send("I'm in " + str(len(self.client.guilds)) + " servers!")
         elif "help with pp" in message.content.lower():
