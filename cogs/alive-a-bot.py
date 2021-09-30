@@ -41,7 +41,7 @@ class aliveabot(commands.Cog):
             await message.delete()
         elif message.content.startswith('^botservers'):
             await message.channel.send("I'm in " + str(len(self.client.guilds)) + " servers!")
-        elif " has an atomic(thats not good btw) pp." in message.content.lower():
+        elif "help with pp" in message.content.lower():
             await message.channel.send("""Good evening, I'm from the National Urology Society and we received your questions sent to our e-mail, and we're pleased to answer:
 
 1) Yes, 3 inches is considered small. We recomend you surgery process;
