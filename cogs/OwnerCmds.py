@@ -1,30 +1,14 @@
 import discord
-from discord.ext import commands, tasks
+from discord.ext import commands
 import os
-from discord.ext.commands.converter import MemberConverter
-from pretty_help import PrettyHelp,DefaultMenu
-import json
-import asyncio
-import datetime,time
-from discord.ext import cli
 import asyncio
 
 import discord
 from discord import *
 from discord.ext import commands
 from discord.ext.commands.converter import MemberConverter
-from discord.utils import get
 from discord.user import *
 
-import urllib.parse
-import urllib.request
-import re
-import requests
-import random
-import json
-import aiohttp
-
-from math import floor
 
 
 client = discord.Client
