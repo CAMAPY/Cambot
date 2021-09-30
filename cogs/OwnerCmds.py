@@ -37,5 +37,11 @@ class OwnerCommands(commands.Cog):
         await self.client.close()
         print("Ok bye! :wave:")
 
+    @commands.command(hidden = True)
+    @commands.is_owner()
+    async def say(ctx, *,arg):
+        channel = client.get_channel(873983296269348884)
+        await channel.send(arg)
+
 def setup(client):
     client.add_cog(OwnerCommands(client))
