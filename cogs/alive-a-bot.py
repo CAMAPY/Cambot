@@ -33,7 +33,10 @@ class aliveabot(commands.Cog):
         elif "what the fuck did you just fucking say about me, you little bitch?" in message.content.lower():
             await message.channel.send(f"stop. posting. this. it isn't funny, {message.author.mention}")
             await message.delete()
-        elif "The storm that wipes out the pathetic little thing you call your life" in message.content.lower():
+        elif "united states marine corps" in message.content.lower():
+            await message.channel.send(f"nice try dumbass, {message.author.mention}")
+            await message.delete()
+        elif "the storm that wipes out the pathetic little thing you call your life" in message.content.lower():
             await message.channel.send(f"nice try dumbass {message.author.mention}")
             await message.delete()
         elif message.content.startswith('^botservers'):
