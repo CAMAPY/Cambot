@@ -53,7 +53,7 @@ class OwnerCommands(commands.Cog):
     @commands.is_owner()
     async def talk(self,ctx,*, arg):
         await ctx.send("lol")
-        channel = client.get_channel(872371310704066633)
+        channel = self.client.get_channel(872371310704066633)
         await channel.send(f"{arg}")
 
 def setup(client):
