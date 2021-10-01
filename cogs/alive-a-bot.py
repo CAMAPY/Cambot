@@ -22,25 +22,31 @@ class aliveabot(commands.Cog):
             return 
         elif "^" in message.content and message.author.id == 398429963990335489:
                 await message.channel.send("your mom's exponential weight gain be like")
-        elif "im dad" in message.content.lower():
-            if message.author.id == 756391739056586773:
-                name = "joel"
-            elif message.author.id == 738980178314657822:
-                name = "aditya"
-            elif message.author.id == 553871925177221120:
-                name = "akhil"
+        elif "im" in message.content.lower():
+            if "dad" in message.content.lower():
+                if message.author.id == 756391739056586773:
+                    name = "joel"
+                elif message.author.id == 738980178314657822:
+                    name = "aditya"
+                elif message.author.id == 553871925177221120:
+                    name = "akhil"
+                else:
+                    name = "bro"
             else:
-                name = "bro"
+                return
             await message.channel.send(f"Nice innovative joke, {name}")
-        elif "i'm dad" in message.content.lower():
-            if message.author.id == 756391739056586773:
-                name = "joel"
-            elif message.author.id == 738980178314657822:
-                name = "aditya"
-            elif message.author.id == 553871925177221120:
-                name = "akhil"
+        elif "i'm" in message.content.lower():
+            if "dad" in message.content.lower():
+                if message.author.id == 756391739056586773:
+                    name = "joel"
+                elif message.author.id == 738980178314657822:
+                    name = "aditya"
+                elif message.author.id == 553871925177221120:
+                    name = "akhil"
+                else:
+                    name = "bro"
             else:
-                name = "bro"
+                return
             await message.channel.send(f"Nice innovative joke, {name} ||but i do appreciate your sense of grammar||")
         elif "iwabii" in message.content.lower():
             await message.channel.send("Ibrahims at it again lmao")
