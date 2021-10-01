@@ -82,8 +82,6 @@ class aliveabot(commands.Cog):
 5) The attraction for people of the same sex can be a strong sign of homosexuals tendencies;
 
 Any other questions, we're here to help. Have a nice day.""")
-        elif "lmfaoo" in message.content.lower():
-            await message.channel.send("This is the most amusing thing I have ever seen in my lifetime. I laughed so hard, I peed myself, sprained my ankle running to the bathroom and faceplanted on to the toilet, breaking all my teeth. None of that matters though because I laughed all the while. I'm so inspired that I've quit my job and dedicated my life to traversing the globe spreading the word and teaching your garbage to everyone. Thank you so much for your continued contribution to the world.")
         elif "cambot" in message.content.lower():
             await message.channel.send(f"{random.choice(possible_responses)} {message.author.mention}")
 
