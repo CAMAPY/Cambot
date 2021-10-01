@@ -17,12 +17,24 @@ class aliveabot(commands.Cog):
 
     @commands.Cog.listener()
     async def on_message(self, message): 
-        possible_responses = [ 'hello', 'suppers', 'yo wassup', 'stfu dumbass', 'what do u want this time?', 'ok now what?', 'hello daddy :drooling_face:', "bruh", "my name is not to be invoked, he might be close..." ] 
-        if "cambot" in message.content.lower():
+        possible_responses = [ 'hello', 'suppers', 'yo wassup', 'stfu dumbass', 'what do u want this time?', 'ok now what?', 'hello daddy :drooling_face:', "bruh", "my name is not to be invoked, he might be close..." ]
+        if message.author == self.client.user:
+            return 
+        elif "cambot" in message.content.lower():
             await message.channel.send(f"{random.choice(possible_responses)} {message.author.mention}")
         elif "^" in message.content and message.author.id == 398429963990335489:
                 await message.channel.send("your mom's exponential weight gain be like")
                 await message.delete()
+        elif "im dad" in message.content.lower():
+            if message.author.id == 756391739056586773:
+                name = "joel"
+            elif message.author.id == 738980178314657822:
+                name = "aditya"
+            elif message.author.id == 553871925177221120:
+                name = "akhil"
+            else:
+                name = "bro"
+            await message.channel.send(f"Nice innovative joke, {name}")
         elif "iwabii" in message.content.lower():
             await message.channel.send("Ibrahims at it again lmao")
         elif "ironic" in message.content.lower() and message.author.id == 680298420338294796:
