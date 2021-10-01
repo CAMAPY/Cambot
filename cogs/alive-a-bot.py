@@ -20,8 +20,6 @@ class aliveabot(commands.Cog):
         possible_responses = [ 'hello', 'suppers', 'yo wassup', 'stfu dumbass', 'what do u want this time?', 'ok now what?', 'hello daddy :drooling_face:', "bruh", "my name is not to be invoked, he might be close..." ]
         if message.author == self.client.user:
             return 
-        elif "cambot" in message.content.lower():
-            await message.channel.send(f"{random.choice(possible_responses)} {message.author.mention}")
         elif "^" in message.content and message.author.id == 398429963990335489:
                 await message.channel.send("your mom's exponential weight gain be like")
                 await message.delete()
@@ -68,7 +66,7 @@ class aliveabot(commands.Cog):
             await message.channel.send("I'm in " + str(len(self.client.guilds)) + " servers!")
         elif "help with pp" in message.content.lower():
             await message.channel.send("""Good evening, I'm from the National Urology Society and we received your questions sent to our e-mail, and we're pleased to answer:
-
+        
 1) Yes, 3 inches is considered small. We recomend you surgery process;
 
 2) No, it's not usual for the condom to be loose. There's no XS size;
@@ -80,6 +78,8 @@ class aliveabot(commands.Cog):
 5) The attraction for people of the same sex can be a strong sign of homosexuals tendencies;
 
 Any other questions, we're here to help. Have a nice day.""")
+        elif "cambot" in message.content.lower():
+            await message.channel.send(f"{random.choice(possible_responses)} {message.author.mention}")
 
 def setup(client):
     client.add_cog(aliveabot(client))
