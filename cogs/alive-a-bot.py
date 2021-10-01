@@ -20,6 +20,8 @@ class aliveabot(commands.Cog):
         possible_responses = [ 'hello', 'suppers', 'yo wassup', 'stfu dumbass', 'what do u want this time?', 'ok now what?', 'hello daddy :drooling_face:', "bruh", "my name is not to be invoked, he might be close..." ]
         if message.author == self.client.user:
             return 
+        elif ";t" in message.content.lower():
+            return
         elif "^" in message.content and message.author.id == 398429963990335489:
                 await message.channel.send("your mom's exponential weight gain be like")
         elif "im" in message.content.lower() and "imagine" not in message.content.lower():
