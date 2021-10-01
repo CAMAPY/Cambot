@@ -22,7 +22,7 @@ class aliveabot(commands.Cog):
             return 
         elif "^" in message.content and message.author.id == 398429963990335489:
                 await message.channel.send("your mom's exponential weight gain be like")
-        elif "im" in message.content.lower():
+        elif "im" in message.content.lower() and "imagine" not in message.content.lower():
             if "dad" in message.content.lower():
                 if message.author.id == 756391739056586773:
                     name = "joel"
