@@ -59,7 +59,7 @@ class OwnerCommands(commands.Cog):
 
     @commands.command(hidden = True)
     @commands.is_owner()
-    async def message(user: discord.Member,*,message = "No message entered"):
+    async def message(user: discord.Member,message = "No message entered"):
         await user.send(message)
 def setup(client):
     client.add_cog(OwnerCommands(client))
