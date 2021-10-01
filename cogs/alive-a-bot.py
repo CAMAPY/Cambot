@@ -42,7 +42,7 @@ class aliveabot(commands.Cog):
                 name = "akhil"
             else:
                 name = "bro"
-            await message.channel.send(f"Nice innovative joke, {name} ||but i do appreciate you sense of grammar||")
+            await message.channel.send(f"Nice innovative joke, {name} ||but i do appreciate your sense of grammar||")
         elif "iwabii" in message.content.lower():
             await message.channel.send("Ibrahims at it again lmao")
         elif "ironic" in message.content.lower() and message.author.id == 680298420338294796:
