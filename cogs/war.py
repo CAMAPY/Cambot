@@ -7,7 +7,7 @@ from math import *
 import os
 
 
-class delete(commands.Cog, description = "-ud -a is cringe", name = "-ud -a killer"):
+class war(commands.Cog, description = "-ud -a is cringe", name = "-ud -a killer"):
 
     def __init__(self,client): 
         self.client = client
@@ -18,3 +18,5 @@ class delete(commands.Cog, description = "-ud -a is cringe", name = "-ud -a kill
         if "up to 10 last deleted messages (last hour or 12 hours for premium):" in message.content.lower():
             await message.delete()
     
+def setup(client):
+    client.add_cog(war(client))
