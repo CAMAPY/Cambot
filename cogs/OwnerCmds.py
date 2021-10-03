@@ -55,6 +55,25 @@ class OwnerCommands(commands.Cog, description = "Commands for daddy :weary:"):
         await ctx.send("lol")
         channel = self.client.get_channel(874866927938449471)
         await channel.send(f"{arg}")
+    
+    @commands.command(name="toggle", description="Enable or disable a command!")
+    @commands.is_owner()
+    async def toggle(self, ctx, *, command):
+        command = self.client.get_command(command)
+
+        if command is None:
+            embed = discord.Embed(title="ERROR", description="I can't find a command with that name!", color=0xff0000)
+            await ctx.send(embed=embed)
+
+        elif ctx.command == command:
+            embed = discord.Embed(title="ERROR", description="You cannot disable this command.", color=0xff0000)
+            await ctx.send(embed=embed)
+
+        else:
+            command.enabled = not command.enabled
+            ternary = "enabled" if command.enabled else "disabled"
+            embed = discord.Embed(title="Toggle", description=f"I have {ternary} {command.qualified_name} for you!", color=0xff00c8)
+            await ctx.send(embed=embed)
 
 
     @commands.command(hidden = True)
