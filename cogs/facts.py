@@ -5,7 +5,7 @@ from pretty_help import PrettyHelp,DefaultMenu
 import random
 import aiohttp
 
-class facts(commands.Cog):
+class facts(commands.Cog, description = "Get amazing facts"):
     def __init__(self,client): 
         self.client = client
     @commands.Cog.listener()
