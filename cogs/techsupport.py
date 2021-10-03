@@ -19,5 +19,5 @@ class TechSupport(commands.Cog):
     @commands.command()
     async def techsupport(self, ctx):
         devices = ['Automated Dildo', 'Vibrator', 'Automatic Pet Feeder', "PlayStation 2", "Smart Watch"]
-        await ctx.send("Good day Sir/Madam, Thank you for calling tech-support regarding your {random.choice(devices)}")
+        await ctx.send(f"Good day Sir/Madam, Thank you for calling tech-support regarding your {random.choice(devices)}")
     
