@@ -7,7 +7,7 @@ from math import *
 import os
 
 
-class aliveabot(commands.Cog):
+class aliveabot(commands.Cog, description = "Responses that make the bot seem alive"):
 
     def __init__(self,client): 
         self.client = client

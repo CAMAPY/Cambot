@@ -7,7 +7,7 @@ from math import *
 import os
 from discord.ext.commands.converter import MemberConverter
 
-class dice(commands.Cog):
+class dice(commands.Cog, description = "Get your life-choices done with these dices"):
 
     def __init__(self,client): 
         self.client = client

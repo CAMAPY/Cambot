@@ -8,7 +8,7 @@ import os
 from discord.ext.commands.converter import MemberConverter
  
 
-class TechSupport(commands.Cog):
+class TechSupport(commands.Cog, description = "Tech-support"):
 
     def __init__(self,client): 
         self.client = client
@@ -16,8 +16,13 @@ class TechSupport(commands.Cog):
     async def on_ready(self):
         print(f'Tech Support has been turned on {self.client.user}')
      
-    @commands.command()
+    @commands.command(aliases = ["tech", "support"], brief = "Get premium tech-support", help = "")
     async def techsupport(self, ctx):
         devices = ['Automated Dildo', 'Vibrator', 'Automatic Pet Feeder', "PlayStation 2", "Smart Watch"]
         await ctx.send(f"Good day Sir/Madam, Thank you for calling tech-support regarding your {random.choice(devices)}")
     
+
+
+
+def setup(client):
+    client.add_cog(TechSupport(client))

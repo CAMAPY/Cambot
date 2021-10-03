@@ -7,7 +7,7 @@ from math import *
 import os
 
 
-class ping(commands.Cog):
+class ping(commands.Cog, description = "Bot replies to ping"):
 
     def __init__(self,client): 
         self.client = client    

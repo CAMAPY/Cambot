@@ -8,7 +8,7 @@ import os
 from discord.ext.commands.converter import MemberConverter
  
 
-class moderation(commands.Cog):
+class moderation(commands.Cog, description = "Moderators moderating around"):
 
     def __init__(self,client): 
         self.client = client

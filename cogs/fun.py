@@ -7,7 +7,7 @@ from math import *
 import os
 
 
-class Fun(commands.Cog):
+class Fun(commands.Cog, description = "Fun times with the bot come from here"):
 
     def __init__(self,client): 
         self.client = client

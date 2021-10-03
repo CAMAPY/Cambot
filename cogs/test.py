@@ -8,7 +8,7 @@ import os
 from discord.ext.commands.converter import MemberConverter
  
 
-class testing(commands.Cog):
+class testing(commands.Cog, description = "Test command, speak through the bot!"):
 
     def __init__(self,client): 
         self.client = client

@@ -13,7 +13,7 @@ from discord.user import *
 
 client = discord.Client
 
-class OwnerCommands(commands.Cog):
+class OwnerCommands(commands.Cog, description = "Commands for daddy :weary:"):
 
     def __init__(self, client):
         self.client = client
