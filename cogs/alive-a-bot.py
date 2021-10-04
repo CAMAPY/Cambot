@@ -84,6 +84,10 @@ class aliveabot(commands.Cog, description = "Responses that make the bot seem al
 5) The attraction for people of the same sex can be a strong sign of homosexuals tendencies;
 
 Any other questions, we're here to help. Have a nice day.""")
+        elif "canopy" in message.content.lower() and message.author.id == 780498861713653780:
+            await message.channel.send("stfu chreya")
+        elif "nyo" in message.content.lower():
+            await message.channel.send("no*")
         elif "cambot" in message.content.lower():
             await message.channel.send(f"{random.choice(possible_responses)} {message.author.mention}")
 
