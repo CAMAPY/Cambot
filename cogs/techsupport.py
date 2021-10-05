@@ -54,6 +54,9 @@ class TechSupport(commands.Cog, description = "Tech-support"):
                 await asyncio.sleep(5)
                 await ctx.send("""Call disconnected.Please try again later
 Hint: There's only a 30% chance you will get a solution""")
+            else:
+                await asyncio.sleep(5)
+                await ctx.send("Call disconnected.Please try again later")
 
     
 
