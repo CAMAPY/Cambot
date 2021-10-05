@@ -30,7 +30,7 @@ class TechSupport(commands.Cog, description = "Tech-support"):
         def check(message):
             return (message.content == "1" or message.content == '2' or message.content == '3') and message.author == ctx.author  
         choice = (await self.client.wait_for('message', check=check)).content 
-        await ctx.send("Connecting... <a:loading:894908557261168681>")
+        await ctx.send("Connecting... <a:loading:894873095737856010>")
         await ctx.send(f"Please wait patiently while we connect you to our specialists")
         await asyncio.sleep(5)
         await ctx.send(f"Our Helpers are busy at the moment, We will get to you in a minute")
@@ -49,8 +49,11 @@ class TechSupport(commands.Cog, description = "Tech-support"):
                 solve = discord.Embed(title = "Solution", description = "WHATEVER YOU DO, DO NOT FEED IT")
                 await ctx.send(embed = solve)
         else:
-            await asyncio.sleep(5)
-            await ctx.send("Call disconnected.Please try again later")
+            num = random.randint(1,3)
+            if num > 1:
+                await asyncio.sleep(5)
+                await ctx.send("""Call disconnected.Please try again later
+Hint: There's only a 30% chance you will get a solution""")
 
     
 
