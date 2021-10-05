@@ -40,6 +40,7 @@ class TechSupport(commands.Cog, description = "Tech-support"):
         print(type(numbers))
         if numbers > 80:
             if choice == "1":
+                solve = discord.Embed(title = "Solution", description = "Stroke dildo soothingly")
                 await ctx.send("Stroke dildo soothingly")
             if choice == "2":
                 await ctx.send("Apply lube or check for dents in dildo")
