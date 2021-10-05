@@ -21,7 +21,7 @@ class TechSupport(commands.Cog, description = "Tech-support"):
     async def techsupport(self, ctx):
         def check(message):
             return (message.content == "1" or message.content == '2' or message.content == '3') and message.author == ctx.author 
-        choice = (await self.client.wait_for('message', check=check)).content
+        choice = (await self.client.wait_for('message', check=check)).content 
         devices = ['Automated Dildo', 'Vibrator', 'Automatic Pet Feeder', "PlayStation 2"]
         device = random.choice(devices)
         await ctx.send(f"Good day Sir/Madam, Thank you for calling tech-support regarding your {device}")
@@ -31,38 +31,37 @@ class TechSupport(commands.Cog, description = "Tech-support"):
             await ctx.send("""`1) Dildo not extending
 2) Dildo not as sensual as before
 3) I think my dildo is alive`""")      
-        await ctx.send("Connecting... <a:loading:894873095737856010>")
-        await ctx.send(f"Please wait patiently while we connect you to our specialists")
-        await asyncio.sleep(5)
-        await ctx.send(f"Our Helpers are busy at the moment, We will get to you in a minute")
-        await asyncio.sleep(5)
-        await ctx.send(f"Please consider checking the manual or our support forums for a solution before calling us")
-        numbers = random.randint(1, 100)
-        print(type(numbers))
-        if numbers > 70:
-            if choice == "1":
-                solve = discord.Embed(title = "Solution", description = "Stroke dildo soothingly")
-                await ctx.send(embed = solve)
-            elif choice == "2":
-                solve = discord.Embed(title = "Solution", description = "Apply lube or check for dents in dildo")
-                await ctx.send(embed = solve)
-            elif choice == "3":
-                solve = discord.Embed(title = "Solution", description = "WHATEVER YOU DO, DO NOT FEED IT")
-                await ctx.send(embed = solve)
-        else:
-            num = random.randint(1,3)
-            if num > 1:
-                await asyncio.sleep(5)
-                await ctx.send("""Call disconnected.Please try again later
-Hint: There's only a 30% chance you will get a solution""")
+            await ctx.send("Connecting... <a:loading:894873095737856010>")
+            await ctx.send(f"Please wait patiently while we connect you to our specialists")
+            await asyncio.sleep(5)
+            await ctx.send(f"Our Helpers are busy at the moment, We will get to you in a minute")
+            await asyncio.sleep(5)
+            await ctx.send(f"Please consider checking the manual or our support forums for a solution before calling us")
+            numbers = random.randint(1, 100)
+            print(type(numbers))
+            if numbers > 70:
+                if choice == "1":
+                    solve = discord.Embed(title = "Solution", description = "Stroke dildo soothingly")
+                    await ctx.send(embed = solve)
+                elif choice == "2":
+                    solve = discord.Embed(title = "Solution", description = "Apply lube or check for dents in dildo")
+                    await ctx.send(embed = solve)
+                elif choice == "3":
+                    solve = discord.Embed(title = "Solution", description = "WHATEVER YOU DO, DO NOT FEED IT")
+                    await ctx.send(embed = solve)
             else:
-                await asyncio.sleep(5)
-                await ctx.send("Call disconnected.Please try again later")
-        if device == "Automatic pet feeder":
-            await ctx.send("""`1) Pet not eating
+                num = random.randint(1,3)
+                if num > 1:
+                    await asyncio.sleep(5)
+                    await ctx.send("""Call disconnected.Please try again later
+Hint: There's only a 30% chance you will get a solution""")
+                else:
+                    await asyncio.sleep(5)
+                    await ctx.send("Call disconnected.Please try again later")
+        elif device == "Automatic pet feeder":
+            await ctx.send("""`1) Pet not eating`
 2) Food smells weird`""")      
-
-         
+            
             await ctx.send("Connecting... <a:loading:894873095737856010>")
             await ctx.send(f"Please wait patiently while we connect you to our specialists")
             await asyncio.sleep(5)
@@ -85,7 +84,7 @@ Hint: There's only a 30% chance you will get a solution""")
                 if num > 1:
                     await asyncio.sleep(5)
                     await ctx.send("""Call disconnected.Please try again later
-    Hint: There's only a 30% chance you will get a solution""")
+Hint: There's only a 30% chance you will get a solution""")
                 else:
                     await asyncio.sleep(5)
                     await ctx.send("Call disconnected.Please try again later")
