@@ -41,11 +41,13 @@ class TechSupport(commands.Cog, description = "Tech-support"):
         if numbers > 80:
             if choice == "1":
                 solve = discord.Embed(title = "Solution", description = "Stroke dildo soothingly")
-                await ctx.send("Stroke dildo soothingly")
+                await ctx.send(embed = solve)
             if choice == "2":
-                await ctx.send("Apply lube or check for dents in dildo")
+                solve = discord.Embed(title = "Solution", description = "Apply lube or check for dents in dildo")
+                await ctx.send(embed = solve)
             if choice == "3":
-                await ctx.send("WHATEVER YOU DO, DO NOT FEED IT")
+                solve = discord.Embed(title = "Solution", description = "WHATEVER YOU DO, DO NOT FEED IT")
+                await ctx.send(embed = solve)
         else:
             await ctx.send("Call disconnected.Please try again later")
 
