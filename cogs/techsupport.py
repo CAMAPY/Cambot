@@ -18,7 +18,7 @@ class TechSupport(commands.Cog, description = "Tech-support"):
      
     @commands.command(aliases = ["tech", "support"], brief = "Get premium tech-support", help = "")
     async def techsupport(self, ctx):
-        devices = ['Automated Dildo', 'Vibrator', 'Automatic Pet Feeder', "PlayStation 2", "Smart Watch"]
+        devices = ['Automated Dildo']
         device = random.choice(devices)
         await ctx.send(f"Good day Sir/Madam, Thank you for calling tech-support regarding your {device}")
         await ctx.send("Please choose your problem from the following options: (enter the number)")
@@ -27,7 +27,7 @@ class TechSupport(commands.Cog, description = "Tech-support"):
 2)Dildo not as sensual as before
 3)I think my dildo is alive""")      
         def check(message):
-            return (message.content=="1" or message.content.lower() == '2' or message.content.lower() == '3') and message.author == ctx.author  
+            return (message.content =="1" or message.content.lower() == '2' or message.content.lower() == '3') and message.author == ctx.author  
         choice = (await self.client.wait_for('message', check=check)).content 
         responses = ["Please wait patiently while we connect you to our specialists", "Our Helpers are busy at the moment, We will get to you in a minute", "Please consider checking the manual or our support forums for a solution before calling us"]
         await ctx.send(f"{random.choice(responses)}")
