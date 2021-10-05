@@ -32,6 +32,7 @@ class TechSupport(commands.Cog, description = "Tech-support"):
         responses = ["Please wait patiently while we connect you to our specialists", "Our Helpers are busy at the moment, We will get to you in a minute", "Please consider checking the manual or our support forums for a solution before calling us"]
         await ctx.send(f"{random.choice(responses)}")
         numbers = random.randint(1, 100)
+        print(type(numbers))
         if numbers > 80:
             if choice == "1":
                 await ctx.send("Stroke dildo soothingly")
