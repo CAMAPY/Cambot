@@ -27,12 +27,12 @@ class TechSupport(commands.Cog, description = "Tech-support"):
 2)Dildo not as sensual as before
 3)I think my dildo is alive""")      
         def check(message):
-            return message.content=="1" or message.content.lower() == '2' or message.content.lower() == '3' and message.author == ctx.author  
+            return (message.content=="1" or message.content.lower() == '2' or message.content.lower() == '3') and message.author == ctx.author  
         choice = (await self.client.wait_for('message', check=check)).content 
         responses = ["Please wait patiently while we connect you to our specialists", "Our Helpers are busy at the moment, We will get to you in a minute", "Please consider checking the manual or our support forums for a solution before calling us"]
         await ctx.send(f"{random.choice(responses)}")
         numbers = random.randint(1, 100)
-        if numbers > 90:
+        if numbers > 80:
             if choice == "1":
                 await ctx.send("Stroke dildo soothingly")
             if choice == "2":
