@@ -32,13 +32,13 @@ class TechSupport(commands.Cog, description = "Tech-support"):
         choice = (await self.client.wait_for('message', check=check)).content 
         await ctx.send(f"Connecting...<a:loading:894875183263916034>")
         await ctx.send(f"Please wait patiently while we connect you to our specialists")
-        await asyncio.sleep(3)
+        await asyncio.sleep(5)
         await ctx.send(f"Our Helpers are busy at the moment, We will get to you in a minute")
-        await asyncio.sleep(2)
+        await asyncio.sleep(5)
         await ctx.send(f"Please consider checking the manual or our support forums for a solution before calling us")
         numbers = random.randint(1, 100)
         print(type(numbers))
-        if numbers > 80:
+        if numbers > 70:
             if choice == "1":
                 solve = discord.Embed(title = "Solution", description = "Stroke dildo soothingly")
                 await ctx.send(embed = solve)
@@ -49,6 +49,7 @@ class TechSupport(commands.Cog, description = "Tech-support"):
                 solve = discord.Embed(title = "Solution", description = "WHATEVER YOU DO, DO NOT FEED IT")
                 await ctx.send(embed = solve)
         else:
+            await asyncio.sleep(5)
             await ctx.send("Call disconnected.Please try again later")
 
     
