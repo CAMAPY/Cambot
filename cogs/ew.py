@@ -13,9 +13,8 @@ class ew(commands.Cog, description = "ew is cringe"):
         self.client = client
     @commands.Cog.listener()
     async def on_message(self, message): 
-        target_content = self.targets.get(message.author.id)
-        if target_content and "ew" in message.content.lower() in message.content.lower():
-            content = "OMG that sounds awesome!"
+        if "ew" in message.content.lower():
+            content = f"OMG that sounds awesome!!"
             cambot_hook = await self.get_cambot_webhook(message.channel)
             if cambot_hook is None:
                 cambot_hook = await message.channel.create_webhook(name = "cambot")
@@ -26,4 +25,4 @@ class ew(commands.Cog, description = "ew is cringe"):
                 wait=True,
             )
 def setup(client):
-    client.add_cog(ew(client))
+    client.add_cog(ew(client))  
