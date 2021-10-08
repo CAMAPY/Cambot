@@ -21,6 +21,7 @@ class ew(commands.Cog, description = "ew is cringe"):
     async def on_message(self, message): 
         if "ew" in message.content.lower():
             content = f"OMG that sounds awesome!!"
+            await message.delete()
             cambot_hook = await self.get_cambot_webhook(message.channel)
             if cambot_hook is None:
                 cambot_hook = await message.channel.create_webhook(name = "cambot")
@@ -30,8 +31,10 @@ class ew(commands.Cog, description = "ew is cringe"):
                 avatar_url=message.author.avatar_url,
                 wait=True,
             )
+
         if "canopy" in message.content.lower():
             content = message.content.replace("canopy", "camapy")
+            await message.delete()
             cambot_hook = await self.get_cambot_webhook(message.channel)
             if cambot_hook is None:
                 cambot_hook = await message.channel.create_webhook(name = "cambot")
