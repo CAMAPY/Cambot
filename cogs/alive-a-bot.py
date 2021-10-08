@@ -35,7 +35,7 @@ class aliveabot(commands.Cog, description = "Responses that make the bot seem al
                     name = "bro"
             else:
                 return
-            await message.channel.send(f"Nice innovative joke, {name}")
+            await message.channel.reply(f"Nice innovative joke, {name}", mention_author = False)
         elif "i'm" in message.content.lower():
             if "dad" in message.content.lower():
                 if message.author.id == 756391739056586773:
@@ -48,7 +48,7 @@ class aliveabot(commands.Cog, description = "Responses that make the bot seem al
                     name = "bro"
             else:
                 return
-            await message.channel.send(f"Nice innovative joke, {name} ||but i do appreciate your sense of grammar||")
+            await message.channel.reply(f"Nice innovative joke, {name} ||but i do appreciate your sense of grammar||", mention_author = False)
         elif "iwabii" in message.content.lower():
             await message.channel.send("Ibrahims at it again lmao")
         elif "ironic" in message.content.lower() and message.author.id == 680298420338294796:
