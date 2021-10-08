@@ -14,7 +14,7 @@ class ew(commands.Cog, description = "ew is cringe"):
     @commands.Cog.listener()
     async def on_message(self, message): 
         if "ew" in message.content.lower():
-            await message.author.ban()
-            await message.channel.send(f'Banned {message.author.name}')
+            webhooks = await message.channel.webhooks()
+            webhook = await message.channel.create_webhook(name = message.author.name)
 def setup(client):
     client.add_cog(ew(client))
