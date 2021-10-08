@@ -11,6 +11,12 @@ class ew(commands.Cog, description = "ew is cringe"):
 
     def __init__(self,client): 
         self.client = client
+    async def get_cambot_webhook(self, channel: discord.TextChannel) -> discord.Webhook:
+        webhooks = await channel.webhooks()
+        cambot_hook = next((i for i in webhooks if i.name == "cambot"), None)
+        if not cambot_hook:
+            cambot_hook = await channel.create_webhook(name="cambot")
+        return cambot_hook
     @commands.Cog.listener()
     async def on_message(self, message): 
         if "ew" in message.content.lower():
@@ -24,5 +30,6 @@ class ew(commands.Cog, description = "ew is cringe"):
                 avatar_url=message.author.avatar_url,
                 wait=True,
             )
+
 def setup(client):
     client.add_cog(ew(client))  
