@@ -38,52 +38,33 @@ class TechSupport(commands.Cog, description = "Tech-support"):
 3) I think my dildo is alive`""")      
             choice = (await self.client.wait_for('message', check=check)).content 
             await loading()
-            numbers = random.randint(1, 100)
-            print(type(numbers))
-            if numbers > 70:
-                if choice == "1":
-                    solve = discord.Embed(title = "Solution", description = "Stroke dildo soothingly")
-                    await ctx.send(embed = solve)
-                elif choice == "2":
-                    solve = discord.Embed(title = "Solution", description = "Apply lube or check for dents in dildo")
-                    await ctx.send(embed = solve)
-                elif choice == "3":
-                    solve = discord.Embed(title = "Solution", description = "WHATEVER YOU DO, DO NOT FEED IT")
-                    await ctx.send(embed = solve)
-            else:
-                num = random.randint(1,3)
-                if num > 1:
-                    await asyncio.sleep(5)
-                    await ctx.send("""Call disconnected.Please try again later
-Hint: There's only a 30% chance you will get a solution""")
-                else:
-                    await asyncio.sleep(5)
-                    await ctx.send("Call disconnected.Please try again later")
+            await loading()
+            if choice == "1":
+                solve = discord.Embed(title = "Solution", description = "Stroke dildo soothingly")
+                await ctx.send(embed = solve)
+            elif choice == "2":
+                solve = discord.Embed(title = "Solution", description = "Apply lube or check for dents in dildo")
+                await ctx.send(embed = solve)
+            elif choice == "3":
+                solve = discord.Embed(title = "Solution", description = "WHATEVER YOU DO, DO NOT FEED IT")
+                await ctx.send(embed = solve)
+            await asyncio.sleep(5)
+            await ctx.send("Call disconnected")
         elif device == "Automatic pet feeder":
             await ctx.send("""`1) Pet not eating`
 2) Food smells weird`""")      
             choice = (await self.client.wait_for('message', check=check)).content 
             await loading()
-            numbers = random.randint(1, 100)
-            print(type(numbers))
-            if numbers > 70:
-                if choice == "1":
-                    solve = discord.Embed(title = "Solution", description = "Forcefeed the pet until it begs for mercy")
-                    await ctx.send(embed = solve)
-                elif choice == "2":
-                    solve = discord.Embed(title = "Solution", description = "Food is produced by our trustworthy partner PetFudz. Do not worry if pet starts vomitting, throw pet away")
-                    await ctx.send(embed = solve)
-                elif choice == "3":
-                    await ctx.send("That's not a real problem you nitwit")
-            else:
-                num = random.randint(1,3)
-                if num > 1:
-                    await asyncio.sleep(5)
-                    await ctx.send("""Call disconnected.Please try again later
-Hint: There's only a 30% chance you will get a solution""")
-                else:
-                    await asyncio.sleep(5)
-                    await ctx.send("Call disconnected.Please try again later")
+            await loading()
+            if choice == "1":
+                solve = discord.Embed(title = "Solution", description = "Forcefeed the pet until it begs for mercy")
+                await ctx.send(embed = solve)
+            elif choice == "2":
+                solve = discord.Embed(title = "Solution", description = "Food is produced by our trustworthy partner PetFudz. Do not worry if pet starts vomitting, throw pet away")
+                await ctx.send(embed = solve)
+            elif choice == "3":
+                await ctx.send("That's not a real problem you nitwit")
+            await ctx.send("Call disconnected.")
 
         elif device == "PlayStation 2":
             await ctx.send("""`1) PS2 not starting up
@@ -91,27 +72,17 @@ Hint: There's only a 30% chance you will get a solution""")
 3) PS2 is making a ticking noise`""")    
             choice = (await self.client.wait_for('message', check=check)).content 
             await loading()
-            numbers = random.randint(1, 100)
-            print(type(numbers))
-            if numbers > 70:
-                if choice == "1":
-                    solve = discord.Embed(title = "Solution", description = "Plug PS2 into power socket and press power button")
-                    await ctx.send(embed = solve)
-                if choice == "2":
-                    solve = discord.Embed(title = "Solution", description = "Make sure PS2 not connected to microwave display")
-                    await ctx.send(embed = solve)
-                if choice == "3":
-                    solve = discord.Embed(title = "Solution", description = "Quick, take PS2 and enter World Trade Centre")
-                    await ctx.send(embed = solve)
-            else:
-                num = random.randint(1,3)
-                if num > 1:
-                    await asyncio.sleep(5)
-                    await ctx.send("""Call disconnected.Please try again later
-    Hint: There's only a 30% chance you will get a solution""")
-                else:
-                    await asyncio.sleep(5)
-                    await ctx.send("Call disconnected.Please try again later")
+            await loading()
+            if choice == "1":
+                solve = discord.Embed(title = "Solution", description = "Plug PS2 into power socket and press power button")
+                await ctx.send(embed = solve)
+            elif choice == "2":
+                solve = discord.Embed(title = "Solution", description = "Make sure PS2 not connected to microwave display")
+                await ctx.send(embed = solve)
+            elif choice == "3":
+                solve = discord.Embed(title = "Solution", description = "Quick, take PS2 and enter World Trade Centre")
+                await ctx.send(embed = solve)
+            await ctx.send("Call disconnected.")
 
     
 
