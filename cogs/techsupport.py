@@ -25,7 +25,6 @@ class TechSupport(commands.Cog, description = "Tech-support"):
         await ctx.send("Please choose your problem from the following options: (enter the number)")
         def check(message):
             return (message.content == "1" or message.content == '2' or message.content == '3') and message.author == ctx.author 
-        choice = (await self.client.wait_for('message', check=check)).content 
         async def loading():
             await ctx.send("Connecting... <a:loading:894873095737856010>")
             await ctx.send(f"Please wait patiently while we connect you to our specialists")
