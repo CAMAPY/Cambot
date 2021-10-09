@@ -19,14 +19,14 @@ class TechSupport(commands.Cog, description = "Tech-support"):
      
     @commands.command(aliases = ["tech", "support"], brief = "Get premium tech-support", help = "")
     async def techsupport(self, ctx):
-        def check(message):
-            return (message.content == "1" or message.content == '2' or message.content == '3') and message.author == ctx.author 
-        choice = (await self.client.wait_for('message', check=check)).content 
         devices = ['Automated Dildo', 'Vibrator', 'Automatic Pet Feeder', "PlayStation 2"]
         device = random.choice(devices)
         await ctx.send(f"Good day Sir/Madam, Thank you for calling tech-support regarding your {device}")
         await ctx.send("Please choose your problem from the following options: (enter the number)")
-
+        def check(message):
+            return (message.content == "1" or message.content == '2' or message.content == '3') and message.author == ctx.author 
+        choice = (await self.client.wait_for('message', check=check)).content 
+        
         if device == "Automated Dildo":
             await ctx.send("""`1) Dildo not extending
 2) Dildo not as sensual as before
