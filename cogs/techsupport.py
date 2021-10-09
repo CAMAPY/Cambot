@@ -26,17 +26,19 @@ class TechSupport(commands.Cog, description = "Tech-support"):
         def check(message):
             return (message.content == "1" or message.content == '2' or message.content == '3') and message.author == ctx.author 
         choice = (await self.client.wait_for('message', check=check)).content 
-        
-        if device == "Automated Dildo":
-            await ctx.send("""`1) Dildo not extending
-2) Dildo not as sensual as before
-3) I think my dildo is alive`""")      
+        async def loading():
             await ctx.send("Connecting... <a:loading:894873095737856010>")
             await ctx.send(f"Please wait patiently while we connect you to our specialists")
             await asyncio.sleep(5)
             await ctx.send(f"Our Helpers are busy at the moment, We will get to you in a minute")
             await asyncio.sleep(5)
             await ctx.send(f"Please consider checking the manual or our support forums for a solution before calling us")
+        if device == "Automated Dildo":
+            await ctx.send("""`1) Dildo not extending
+2) Dildo not as sensual as before
+3) I think my dildo is alive`""")      
+            choice = (await self.client.wait_for('message', check=check)).content 
+            await loading()
             numbers = random.randint(1, 100)
             print(type(numbers))
             if numbers > 70:
@@ -61,13 +63,8 @@ Hint: There's only a 30% chance you will get a solution""")
         elif device == "Automatic pet feeder":
             await ctx.send("""`1) Pet not eating`
 2) Food smells weird`""")      
-            
-            await ctx.send("Connecting... <a:loading:894873095737856010>")
-            await ctx.send(f"Please wait patiently while we connect you to our specialists")
-            await asyncio.sleep(5)
-            await ctx.send(f"Our Helpers are busy at the moment, We will get to you in a minute")
-            await asyncio.sleep(5)
-            await ctx.send(f"Please consider checking the manual or our support forums for a solution before calling us")
+            choice = (await self.client.wait_for('message', check=check)).content 
+            await loading()
             numbers = random.randint(1, 100)
             print(type(numbers))
             if numbers > 70:
@@ -92,13 +89,9 @@ Hint: There's only a 30% chance you will get a solution""")
         elif device == "PlayStation 2":
             await ctx.send("""`1) PS2 not starting up
 2) PS2 having display error
-3) PS2 is making a ticking noise`""")       
-            await ctx.send("Connecting... <a:loading:894873095737856010>")
-            await ctx.send(f"Please wait patiently while we connect you to our specialists")
-            await asyncio.sleep(5)
-            await ctx.send(f"Our Helpers are busy at the moment, We will get to you in a minute")
-            await asyncio.sleep(5)
-            await ctx.send(f"Please consider checking the manual or our support forums for a solution before calling us")
+3) PS2 is making a ticking noise`""")    
+            choice = (await self.client.wait_for('message', check=check)).content 
+            await loading()
             numbers = random.randint(1, 100)
             print(type(numbers))
             if numbers > 70:
