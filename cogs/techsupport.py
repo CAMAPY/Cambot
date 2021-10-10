@@ -23,7 +23,7 @@ class TechSupport(commands.Cog, description = "Tech-support"):
         device = random.choice(devices)
         await ctx.send(f"Good day Sir/Madam, Thank you for calling tech-support regarding your {device}")
         await ctx.send("Please choose your problem from the following options: (enter the number)")
-        def check(message):
+        def check1(message):
             return (message.content.lower() == "y" or message.content.lower() == 'n') and message.author == ctx.author 
         async def loading():
             await ctx.send(f"Please wait patiently while we connect you to our specialists")
@@ -34,7 +34,7 @@ class TechSupport(commands.Cog, description = "Tech-support"):
         async def reconnect():
             await ctx.send(f"""Connection has been lost
             Would you like to try to reconnect? (y/n)""")
-        def check1(message):
+        def check(message):
             return (message.content == "1" or message.content == '2' or message.content == '3') and message.author == ctx.author 
         if device == "Automated Dildo":
             await ctx.send("""`1) Dildo not extending
