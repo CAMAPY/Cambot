@@ -48,7 +48,7 @@ Would you like to try to reconnect? (y/n)""")
             choice = (await self.client.wait_for('message', check=check)).content 
             await ctx.send("Connecting... <a:loading:894873095737856010>")
             await loading()
-            if number > 50:
+            if number > 80:
                 if choice == "1":
                     solve = discord.Embed(title = "Solution", description = "Stroke dildo soothingly\nProblem: Dildo not extending")
                 elif choice == "2":
@@ -81,7 +81,7 @@ Would you like to try to reconnect? (y/n)""")
             choice = (await self.client.wait_for('message', check=check)).content 
             await ctx.send("Connecting... <a:loading:894873095737856010>")
             await loading()
-            if number > 50:
+            if number > 80:
                 if choice == "1":
                     solve = discord.Embed(title = "Solution", description = "Force feed the pet until it begs for mercy\nProblem: Pet not eating food")
                     await ctx.send(embed = solve)
@@ -117,7 +117,7 @@ Would you like to try to reconnect? (y/n)""")
             choice = (await self.client.wait_for('message', check=check)).content 
             await ctx.send("Connecting... <a:loading:894873095737856010>")
             await loading()
-            if number > 50:
+            if number > 80:
                 if choice == "1":
                     solve = discord.Embed(title = "Solution", description = "Plug PS2 into power socket and press power button\nProblem: PS2 not starting up")
                 elif choice == "2":
@@ -153,7 +153,7 @@ Would you like to try to reconnect? (y/n)""")
             choice = (await self.client.wait_for('message', check=check)).content 
             await ctx.send("Connecting... <a:loading:894873095737856010>")
             await loading()
-            if number > 50:
+            if number > 80:
                 if choice == "1":
                     solve = discord.Embed(title = "Solution", description = "Play `Vennu Mallesh - Its My Life What Ever I Wanna Do` 10 times a day until vibing has reached optimal level\nProblem: Vibrator not vibing")
                 elif choice == "2":
