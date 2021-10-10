@@ -33,7 +33,7 @@ class TechSupport(commands.Cog, description = "Tech-support"):
             await ctx.send(f"Please consider checking the manual or our support forums for a solution before calling us")
         async def reconnect():
             await ctx.send(f"""Connection has been lost
-            Would you like to try to reconnect? (y/n)""")
+Would you like to try to reconnect? (y/n)""")
         def check(message):
             return (message.content == "1" or message.content == '2' or message.content == '3') and message.author == ctx.author 
         if device == "Automated Dildo":
@@ -60,8 +60,9 @@ class TechSupport(commands.Cog, description = "Tech-support"):
                 await ctx.send("Thank you for reaching out to us, call disconnected")
             elif option.lower() == "n":
                 await ctx.send("Call disconnected")
-        elif device == "Automatic pet feeder":
-            await ctx.send("""`1) Pet not eating`
+                
+        elif device == "Automatic Pet Feeder":
+            await ctx.send("""`1) Pet not eating food`
 2) Food smells weird`""")      
             choice = (await self.client.wait_for('message', check=check)).content 
             await ctx.send("Connecting... <a:loading:894873095737856010>")
@@ -93,6 +94,7 @@ class TechSupport(commands.Cog, description = "Tech-support"):
             await reconnect()
             option = (await self.client.wait_for('message', check=check1)).content 
             if option.lower() == "y":
+                await loading()
                 if choice == "1":
                     solve = discord.Embed(title = "Solution", description = "Plug PS2 into power socket and press power button")
                     await ctx.send(embed = solve)
