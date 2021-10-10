@@ -48,21 +48,21 @@ Would you like to try to reconnect? (y/n)""")
             if option.lower() == "y":
                 await loading()
                 if choice == "1":
-                    solve = discord.Embed(title = "Solution", description = "Stroke dildo soothingly")
+                    solve = discord.Embed(title = "Solution", description = "Stroke dildo soothingly\nProblem: Dildo not extending")
                     await ctx.send(embed = solve)
                 elif choice == "2":
-                    solve = discord.Embed(title = "Solution", description = "Apply lube or check for dents in dildo")
+                    solve = discord.Embed(title = "Solution", description = "Apply lube or check for dents in dildo\nProblem: Dildo not as sensual as before")
                     await ctx.send(embed = solve)
                 elif choice == "3":
-                    solve = discord.Embed(title = "Solution", description = "WHATEVER YOU DO, DO NOT FEED IT")
+                    solve = discord.Embed(title = "Solution", description = "WHATEVER YOU DO, DO NOT FEED IT\nProblem: I think my dildo is alive")
                     await ctx.send(embed = solve)
                 await asyncio.sleep(2)
                 await ctx.send("Thank you for reaching out to us, call disconnected")
             elif option.lower() == "n":
                 await ctx.send("Call disconnected")
-                
+
         elif device == "Automatic Pet Feeder":
-            await ctx.send("""`1) Pet not eating food`
+            await ctx.send("""`1) Pet not eating food
 2) Food smells weird`""")      
             choice = (await self.client.wait_for('message', check=check)).content 
             await ctx.send("Connecting... <a:loading:894873095737856010>")
@@ -72,10 +72,10 @@ Would you like to try to reconnect? (y/n)""")
             if option.lower() == "y":
                 await loading()
                 if choice == "1":
-                    solve = discord.Embed(title = "Solution", description = "Forcefeed the pet until it begs for mercy")
+                    solve = discord.Embed(title = "Solution", description = "Force feed the pet until it begs for mercy\nProblem: Pet not eating food")
                     await ctx.send(embed = solve)
                 elif choice == "2":
-                    solve = discord.Embed(title = "Solution", description = "Food is produced by our trustworthy partner PetFudz. Do not worry if pet starts vomitting, throw pet away")
+                    solve = discord.Embed(title = "Solution", description = "Food is produced by our trustworthy partner PetFudz. Do not worry if pet starts vomitting, throw pet away\nProblem: Food smells weird")
                     await ctx.send(embed = solve)
                 elif choice == "3":
                     await ctx.send("That's not a real problem you nitwit")
@@ -96,18 +96,45 @@ Would you like to try to reconnect? (y/n)""")
             if option.lower() == "y":
                 await loading()
                 if choice == "1":
-                    solve = discord.Embed(title = "Solution", description = "Plug PS2 into power socket and press power button")
+                    solve = discord.Embed(title = "Solution", description = "Plug PS2 into power socket and press power button\nProblem: PS2 not starting up")
                     await ctx.send(embed = solve)
                 elif choice == "2":
-                    solve = discord.Embed(title = "Solution", description = "Make sure PS2 not connected to microwave display")
+                    solve = discord.Embed(title = "Solution", description = "Make sure PS2 not connected to microwave display\nProblem: PS2 having display error ")
                     await ctx.send(embed = solve)
                 elif choice == "3":
-                    solve = discord.Embed(title = "Solution", description = "Quick, take PS2 and enter World Trade Centre")
+                    solve = discord.Embed(title = "Solution", description = "Quick, take PS2 and enter World Trade Centre\nProblem: PS2 is making a ticking noise")
                     await ctx.send(embed = solve)
                 await asyncio.sleep(2)
                 await ctx.send("Thank you for reaching out to us, call disconnected")
             elif option.lower() == "n":
                 await ctx.send("Call disconnected")
+
+        elif device == "Vibrator":
+            await ctx.send("""1)Vibrator not vibing
+2)Vibrator wailing in flawless russian
+3)I think my vibrator is a serial killer""")
+            choice = (await self.client.wait_for('message', check=check)).content 
+            await ctx.send("Connecting... <a:loading:894873095737856010>")
+            await loading()
+            await reconnect()
+            option = (await self.client.wait_for('message', check=check1)).content 
+            if option.lower() == "y":
+                await loading()
+                if choice == "1":
+                    solve = discord.Embed(title = "Solution", description = "Play `Vennu Mallesh - Its My Life What Ever I Wanna Do` 10 times a day until vibing has reached optimal level\nProblem: Vibrator not vibing")
+                    await ctx.send(embed = solve)
+                elif choice == "2":
+                    solve = discord.Embed(title = "Solution", description = "Play russian national anthem on JBL Charge 5\n Problem: Vibrator wailing in flawless russian")
+                    await ctx.send(embed = solve)
+                elif choice == "3":
+                    solve = discord.Embed(title = "Solution", description = "What are you waiting for? Show it a list of kpop fans\n Problem: I think my vibrator is a serial killer    ")
+                    await ctx.send(embed = solve)
+                await asyncio.sleep(2)
+                await ctx.send("Thank you for reaching out to us, call disconnected")
+            elif option.lower() == "n":
+                await ctx.send("Call disconnected")
+
+
 
     
 
