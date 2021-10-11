@@ -37,7 +37,7 @@ class TechSupport(commands.Cog, description = "Tech-support"):
         
         async def reconnect():
             await ctx.send(f"""Connection has been lost
-Would you like to try to reconnect? (y/n)""")
+`Would you like to try to reconnect? **(y/n)**`""")
         def check(message):
             return (message.content == "1" or message.content == '2' or message.content == '3') and message.author == ctx.author 
         
@@ -48,7 +48,7 @@ Would you like to try to reconnect? (y/n)""")
             choice = (await self.client.wait_for('message', check=check)).content 
             await ctx.send("Connecting... <a:loading:894873095737856010>")
             await loading()
-            if number > 80:
+            if number > 70:
                 if choice == "1":
                     solve = discord.Embed(title = "Solution", description = "Stroke dildo soothingly\nProblem: Dildo not extending")
                 elif choice == "2":
@@ -81,7 +81,7 @@ Would you like to try to reconnect? (y/n)""")
             choice = (await self.client.wait_for('message', check=check)).content 
             await ctx.send("Connecting... <a:loading:894873095737856010>")
             await loading()
-            if number > 80:
+            if number > 70:
                 if choice == "1":
                     solve = discord.Embed(title = "Solution", description = "Force feed the pet until it begs for mercy\nProblem: Pet not eating food")
                     await ctx.send(embed = solve)
@@ -117,7 +117,7 @@ Would you like to try to reconnect? (y/n)""")
             choice = (await self.client.wait_for('message', check=check)).content 
             await ctx.send("Connecting... <a:loading:894873095737856010>")
             await loading()
-            if number > 80:
+            if number > 70:
                 if choice == "1":
                     solve = discord.Embed(title = "Solution", description = "Plug PS2 into power socket and press power button\nProblem: PS2 not starting up")
                 elif choice == "2":
@@ -147,13 +147,13 @@ Would you like to try to reconnect? (y/n)""")
                     await ctx.send("Call disconnected")
 
         elif device == "Vibrator":
-            await ctx.send("""1)Vibrator not vibing
+            await ctx.send("""`1)Vibrator not vibing
 2)Vibrator wailing in flawless russian
-3)I think my vibrator is a serial killer""")
+3)I think my vibrator is a serial killer`""")
             choice = (await self.client.wait_for('message', check=check)).content 
             await ctx.send("Connecting... <a:loading:894873095737856010>")
             await loading()
-            if number > 80:
+            if number > 70:
                 if choice == "1":
                     solve = discord.Embed(title = "Solution", description = "Play `Vennu Mallesh - Its My Life What Ever I Wanna Do` 10 times a day until vibing has reached optimal level\nProblem: Vibrator not vibing")
                 elif choice == "2":
