@@ -37,7 +37,7 @@ class TechSupport(commands.Cog, description = "Tech-support"):
         
         async def reconnect():
             await ctx.send(f"""Connection has been lost
-`Would you like to try to reconnect? **(y/n)**`""")
+`Would you like to try to reconnect?` **(y/n)**""")
         def check(message):
             return (message.content == "1" or message.content == '2' or message.content == '3') and message.author == ctx.author 
         
