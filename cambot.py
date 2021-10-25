@@ -9,7 +9,7 @@ from discord.ext.commands.converter import MemberConverter
 
 intents = discord.Intents.all()
 
-client = commands.Bot(command_prefix = ';', intents=intents, help_command=PrettyHelp())
+client = commands.Bot(command_prefix = ';', intents=intents, help_command=PrettyHelp(),case_insensitive=True)
 
 @client.event
 async def on_ready():
