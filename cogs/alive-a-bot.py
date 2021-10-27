@@ -19,11 +19,11 @@ class aliveabot(commands.Cog, description = "Responses that make the bot seem al
     async def on_message(self, message): 
         if message.author == self.client.user:
             return 
-        elif ";t" in message.content.lower():
+        elif message.content.startswith(";t"):
             return
         elif "^" in message.content and message.author.id == 398429963990335489:
-                await message.channel.send("your mom's exponential weight gain be like")
-        elif "im" in message.content.lower() and "imagine" not in message.content.lower():
+                await message.reply("your mom's exponential weight gain be like")
+        elif "im" in message.content.lower() and "hi" in message.content.lower():
             if "dad" in message.content.lower():
                 if message.author.id == 756391739056586773:
                     name = "joel"
@@ -35,7 +35,7 @@ class aliveabot(commands.Cog, description = "Responses that make the bot seem al
                     name = "bro"
             else:
                 return
-            await message.channel.reply(f"Nice innovative joke, {name}", mention_author = False)
+            await message.reply(f"Nice innovative joke, {name}", mention_author = False)
         elif "i'm" in message.content.lower():
             if "dad" in message.content.lower():
                 if message.author.id == 756391739056586773:
@@ -48,29 +48,29 @@ class aliveabot(commands.Cog, description = "Responses that make the bot seem al
                     name = "bro"
             else:
                 return
-            await message.channel.reply(f"Nice innovative joke, {name} ||but i do appreciate your sense of grammar||", mention_author = False)
+            await message.reply(f"Nice innovative joke, {name} ||but i do appreciate your sense of grammar||", mention_author = False)
         elif "iwabii" in message.content.lower():
-            await message.channel.send("Ibrahims at it again lmao")
+            await message.reply("Ibrahims at it again lmao")
         elif "ironic" in message.content.lower() and message.author.id == 680298420338294796:
-                await message.channel.send("learn to use ironic properly dumbfuck")
+                await message.reply("learn to use ironic properly dumbfuck")
         elif "fap" in message.content.lower() and message.author.id == 275609153274380289:
-                await message.channel.send("Bruh, koshy don't fap again")
+                await message.reply("Bruh, koshy don't fap again")
         elif "what the fuck did you just fucking say about me, you little bitch?" in message.content.lower():
-            await message.channel.send(f"stop. posting. this. it isn't funny, {message.author.mention}")
+            await message.reply(f"stop. posting. this. it isn't funny, {message.author.mention}")
             await message.delete()
         elif "united states marine corps" in message.content.lower():
-            await message.channel.send(f"nice try dumbass, {message.author.mention}")
+            await message.reply(f"nice try dumbass, {message.author.mention}")
             await message.delete()
         elif "the storm that wipes out the pathetic little thing you call your life" in message.content.lower():
-            await message.channel.send(f"nice try dumbass {message.author.mention}")
+            await message.reply(f"nice try dumbass {message.author.mention}")
             await message.delete()
         elif "that shit to me over the Internet" in message.content.lower():
-            await message.channel.send(f"nice try dumbass {message.author.mention}")
+            await message.reply(f"nice try dumbass {message.author.mention}")
             await message.delete()
         elif message.content.startswith('^botservers'):
-            await message.channel.send("I'm in " + str(len(self.client.guilds)) + " servers!")
+            await message.reply("I'm in " + str(len(self.client.guilds)) + " servers!")
         elif "help with pp" in message.content.lower():
-            await message.channel.send("""Good evening, I'm from the National Urology Society and we received your questions sent to our e-mail, and we're pleased to answer:
+            await message.reply("""Good evening, I'm from the National Urology Society and we received your questions sent to our e-mail, and we're pleased to answer:
         
 1) Yes, 3 inches is considered small. We recomend you surgery process;
 
@@ -84,7 +84,7 @@ class aliveabot(commands.Cog, description = "Responses that make the bot seem al
 
 Any other questions, we're here to help. Have a nice day.""")
         elif "canopy" in message.content.lower() and message.author.id == 780498861713653780:
-            await message.channel.send("stfu chreya")
+            await message.reply("stfu chreya")
         
 
 def setup(client):
