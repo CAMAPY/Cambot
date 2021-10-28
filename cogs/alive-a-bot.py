@@ -87,6 +87,8 @@ class aliveabot(commands.Cog, description = "Responses that make the bot seem al
 Any other questions, we're here to help. Have a nice day.""")
         elif "canopy" in message.content.lower() and message.author.id == 780498861713653780:
             await message.reply("stfu chreya")
+        elif "kanopy" in message.content.lower() and message.author.id == 780498861713653780:
+            await message.reply("stfu chreya ||lmao u wish||")
         
 
 def setup(client):
