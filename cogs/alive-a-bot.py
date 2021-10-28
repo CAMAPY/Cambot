@@ -58,7 +58,7 @@ class aliveabot(commands.Cog, description = "Responses that make the bot seem al
         elif "what the fuck did you just fucking say about me, you little bitch?" in message.content.lower():
             await message.reply(f"stop. posting. this. it isn't funny, {message.author.mention}")
             await message.delete()
-        elif "wait" in message.content.split():
+        elif "wait" in message.content.lower():
             await message.reply(f"waiting.... <:waiting:903193707539496990>")
         elif "united states marine corps" in message.content.lower():
             await message.reply(f"nice try dumbass, {message.author.mention}")
