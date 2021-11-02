@@ -11,6 +11,9 @@ class ew(commands.Cog, description = "ew is cringe"):
 
     def __init__(self,client): 
         self.client = client
+    @commands.Cog.listener()
+    async def on_ready(self):
+        print(f'webhooks has been turned on {self.client.user}')
     async def get_cambot_webhook(self, channel: discord.TextChannel) -> discord.Webhook:
         webhooks = await channel.webhooks()
         cambot_hook = next((i for i in webhooks if i.name == "cambot"), None)

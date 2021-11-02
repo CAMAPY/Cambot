@@ -11,7 +11,9 @@ class dice(commands.Cog, description = "Get your life-choices done with these di
 
     def __init__(self,client): 
         self.client = client
-
+    @commands.Cog.listener()
+    async def on_ready(self):
+        print(f'stalk has been turned on {self.client.user}')
     @commands.command(brief = "dice roll", help = "roll a dice to get a number between 1 and 6")
     async def roll(self,ctx): 
         numbers = random.randint(1, 6)
