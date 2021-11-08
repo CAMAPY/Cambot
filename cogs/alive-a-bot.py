@@ -22,7 +22,7 @@ class aliveabot(commands.Cog, description = "Responses that make the bot seem al
         elif message.content.startswith(";t"):
             return
         elif "^" in message.content and message.author.id == 398429963990335489:
-                await message.reply("your mom's exponential weight gain be like")
+                await message.reply("your mom's exponential weight gain be like", mention_author = False)
         elif "im" in message.content.lower() and "hi" in message.content.lower():
             if "dad" in message.content.lower():
                 if message.author.id == 756391739056586773:
@@ -50,24 +50,24 @@ class aliveabot(commands.Cog, description = "Responses that make the bot seem al
                 return
             await message.reply(f"Nice innovative joke, {name} ||but i do appreciate your sense of grammar||", mention_author = False)
         elif "iwabii" in message.content.lower():
-            await message.reply("Ibrahims at it again lmao")
+            await message.reply("Ibrahims at it again lmao", mention_author = False)
         elif "ironic" in message.content.lower() and message.author.id == 680298420338294796:
-                await message.reply("learn to use ironic properly dumbfuck")
+                await message.reply("learn to use ironic properly dumbfuck", mention_author = False)
         elif "fap" in message.content.lower() and message.author.id == 275609153274380289:
-                await message.reply("Bruh, koshy don't fap again")
+                await message.reply("Bruh, koshy don't fap again", mention_author = False)
         elif "what the fuck did you just fucking say about me, you little bitch?" in message.content.lower():
-            await message.reply(f"stop. posting. this. it isn't funny, {message.author.mention}")
+            await message.reply(f"stop. posting. this. it isn't funny, {message.author.mention}", mention_author = False)
             await message.delete()
         elif "wait" in message.content.lower():
-            await message.reply(f"waiting.... <:waiting:903193707539496990>")
+            await message.reply(f"waiting.... <:waiting:903193707539496990>", mention_author = False)
         elif "united states marine corps" in message.content.lower():
-            await message.reply(f"nice try dumbass, {message.author.mention}")
+            await message.reply(f"nice try dumbass, {message.author.mention}", mention_author = False)
             await message.delete()
         elif "the storm that wipes out the pathetic little thing you call your life" in message.content.lower():
-            await message.reply(f"nice try dumbass {message.author.mention}")
+            await message.reply(f"nice try dumbass {message.author.mention}", mention_author = False)
             await message.delete()
         elif "that shit to me over the Internet" in message.content.lower():
-            await message.reply(f"nice try dumbass {message.author.mention}")
+            await message.reply(f"nice try dumbass {message.author.mention}", mention_author = False)
             await message.delete()
         elif message.content.startswith('^botservers'):
             await message.reply("I'm in " + str(len(self.client.guilds)) + " servers!")
@@ -84,11 +84,11 @@ class aliveabot(commands.Cog, description = "Responses that make the bot seem al
 
 5) The attraction for people of the same sex can be a strong sign of homosexuals tendencies;
 
-Any other questions, we're here to help. Have a nice day.""")
+Any other questions, we're here to help. Have a nice day.""", mention_author = False)
         elif "canopy" in message.content.lower() and message.author.id == 780498861713653780:
-            await message.reply("stfu chreya")
+            await message.reply("stfu chreya", mention_author = False)
         elif "kanopy" in message.content.lower() and message.author.id == 780498861713653780:
-            await message.reply("stfu chreya ||lmao u wish||")
+            await message.reply("stfu chreya ||lmao u wish||", mention_author = False)
         
 
 def setup(client):
