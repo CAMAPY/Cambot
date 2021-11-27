@@ -52,14 +52,16 @@ class aliveabot(commands.Cog, description = "Responses that make the bot seem al
         elif "iwabii" in message.content.lower():
             await message.reply("Ibrahims at it again lmao", mention_author = False)
         elif "ironic" in message.content.lower() and message.author.id == 680298420338294796:
-                await message.reply("learn to use ironic properly dumbfuck", mention_author = False)
+                await message.reply("learn to use** **ironic properly, dumbfuck", mention_author = False)
         elif "fap" in message.content.lower() and message.author.id == 275609153274380289:
                 await message.reply("Bruh, koshy don't fap again", mention_author = False)
         elif "what the fuck did you just fucking say about me, you little bitch?" in message.content.lower():
             await message.reply(f"stop. posting. this. it isn't funny, {message.author.mention}", mention_author = False)
             await message.delete()
+        elif "buh" in message.content.lower() and message.author.id == 485123430010585101:
+            await message.reply(f'STFU CUNT LEARN TO TYPE BRUH')
         elif "wait" in message.content.lower():
-            await message.reply(f"waiting.... <:waiting:903193707539496990>", mention_author = False)
+            await message.reply(f"waiting...** **<:waiting:903193707539496990>", mention_author = False)
         elif "united states marine corps" in message.content.lower():
             await message.reply(f"nice try dumbass, {message.author.mention}", mention_author = False)
             await message.delete()
