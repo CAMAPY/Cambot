@@ -49,9 +49,7 @@ class ew(commands.Cog, description = "ew is cringe"):
                 avatar_url=message.author.avatar_url,
                 wait=True,
             )
-    @commands.Cog.listener()
-    async def on_message(self, message):
-        if "buh" in message.content.lower():
+        elif "buh" in message.content.lower():
             await message.delete()
             content = message.content.replace("buh", "bruh")
             cambot_hook = await self.get_cambot_webhook(message.channel)
