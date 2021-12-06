@@ -34,7 +34,7 @@ class OwnerCommands(commands.Cog, description = "Commands for daddy :weary:"):
     @commands.command(hidden = True)
     @commands.is_owner()
     async def rename(self, name):
-        await client.user.edit(username=name)
+        await self.client.user.edit(username=name)
 
     @commands.command(aliases = ["s"],hidden =True)
     @commands.is_owner()
