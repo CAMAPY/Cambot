@@ -34,5 +34,6 @@ class facts(commands.Cog, description = "Get amazing facts"):
         fact = random.choice(open("dfacts.txt","r").readlines())
         fax = discord.Embed(title="Random Disturbing fact", description=f'{fact}', color = random.choice(colors))
         await ctx.send(embed = fax)
+        
 def setup(client):
     client.add_cog(facts(client))

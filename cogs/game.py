@@ -17,7 +17,7 @@ class game(commands.Cog, description = "game?!"):
     @commands.command
     async def game(self, ctx):
         msg = await ctx.send("React to this message to join the epic game")
-        await self.client.add_reaction(msg, "✔")
+        await self.client.add_reaction(msg, ":weary:")
 
 
 

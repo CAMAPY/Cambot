@@ -33,7 +33,7 @@ class OwnerCommands(commands.Cog, description = "Commands for daddy :weary:"):
     
     @commands.command(hidden = True)
     @commands.is_owner()
-    async def rename(name):
+    async def rename(self, name):
         await client.user.edit(username=name)
 
     @commands.command(aliases = ["s"],hidden =True)
@@ -78,7 +78,7 @@ class OwnerCommands(commands.Cog, description = "Commands for daddy :weary:"):
 
     @commands.command(hidden = True)
     @commands.is_owner()
-    async def message(user: discord.Member,message = "No message entered"):
+    async def message(self, user: discord.Member,message = "No message entered"):
         await user.send(message)
 def setup(client):
     client.add_cog(OwnerCommands(client))
