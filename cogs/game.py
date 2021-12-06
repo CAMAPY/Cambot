@@ -14,7 +14,7 @@ class game(commands.Cog, description = "game?!"):
     @commands.Cog.listener()
     async def on_ready(self):
         print(f'game has been turned on {self.client.user}')
-    @commands.command
+    @commands.command()
     async def game(self, ctx):
         msg = await ctx.send("React to this message to join the epic game")
         await self.client.add_reaction(msg, ":weary:")
