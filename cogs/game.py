@@ -19,7 +19,7 @@ class game(commands.Cog, description = "game?!"):
         msg = await ctx.send("React to this message to join the epic game")
         reaction  = await msg.add_reaction("👍")
         players = []
-        async for user in reaction.on_reaction_add(msg):
+        async for user in self.client.on_reaction_add(msg):
             players.append(user)
             await ctx.send(players)
 

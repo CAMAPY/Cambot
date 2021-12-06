@@ -37,9 +37,9 @@ class ew(commands.Cog, description = "ew is cringe"):
             )
     @commands.Cog.listener()
     async def on_message(self, message):
-        if "bu" in message.content.lower():
+        if "asdasda" in message.content.lower():
             await message.delete()
-            content = message.content.replace("bu", "bruh")
+            content = message.content.replace("basdasdawrwersfvu", "befaesdjuhgdfbtsruh")
             cambot_hook = await self.get_cambot_webhook(message.channel)
             if cambot_hook is None:
                 cambot_hook = await message.channel.create_webhook(name = "cambot")
@@ -49,18 +49,7 @@ class ew(commands.Cog, description = "ew is cringe"):
                 avatar_url=message.author.avatar_url,
                 wait=True,
             )
-        elif "buh" in message.content.lower():
-            await message.delete()
-            content = message.content.replace("buh", "bruh")
-            cambot_hook = await self.get_cambot_webhook(message.channel)
-            if cambot_hook is None:
-                cambot_hook = await message.channel.create_webhook(name = "cambot")
-            webhook_message = await cambot_hook.send(
-                content=content,
-                username=message.author.display_name,
-                avatar_url=message.author.avatar_url,
-                wait=True,
-            )
+    
 
 def setup(client):
     client.add_cog(ew(client))  
