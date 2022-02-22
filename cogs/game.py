@@ -40,7 +40,7 @@ class game(commands.Cog, description = "game?!"):
             x = 3
             word = random.choice(wordseasy)
             for i in range(2):
-                gameplay()
+                await gameplay()
 
         elif (difficulty.lower() == 'medium') or (difficulty.lower() == 'm'):
             x = 5
@@ -49,7 +49,7 @@ class game(commands.Cog, description = "game?!"):
             x = 6
             word = random.choice(wordshard)
             for i in range(6):
-                gameplay()
+                await gameplay()
 
 
 
