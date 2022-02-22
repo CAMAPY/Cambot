@@ -19,14 +19,18 @@ class game(commands.Cog, description = "game?!"):
     async def wordle(self, ctx,difficulty):
         async def gameplay():
                 statement = (await self.client.wait_for('message', check = check)).content
+                answer = ''
                 if statement != word:
                     for j in range(len(statement)):
                         if statement[j] in word:
                             if statement[j] in word[j]:
-                                statement[j] = '🟩'
+                                k = '🟩'
                             else:
-                                statement[j] = '🟨'
-                    await ctx.send(statement)
+                                k = '🟨'
+                        else:
+                            k = '❌'
+                        answer += k
+                    await ctx.send(answer)
                 else:
                     await ctx.send("YOU GOT IT!! ggwp")
         def check(message):
