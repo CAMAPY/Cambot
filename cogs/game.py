@@ -18,6 +18,7 @@ class game(commands.Cog, description = "game?!"):
     @commands.command()
     async def wordle(self, ctx,difficulty):
         async def gameplay():
+                await ctx.send(f'Start guessing a {difficulty} lettered word')
                 statement = (await self.client.wait_for('message', check = check)).content
                 answer = ''
                 print(word)
@@ -42,14 +43,14 @@ class game(commands.Cog, description = "game?!"):
         wordshard = ['abacus', 'baboon', 'babies', 'babble', 'cabbed', 'canned', 'cabbie', 'dabber', 'eager', 'eagles', 'fabled', 'fabric','facade','fables', 'gabble', 'habits', 'hacked', 'hacker'
         'kebabs', 'machos', 'pacify', 'pacing', 'pacers', 'packed', 'rabbit', 'tables', 'tabbed', 'tablas', 'udders','vaccum', 'vacant', 'vacate', 'wackos', 'yachts', 'zaatar']
         wordsmed = []
-        if (difficulty.lower() == 'easy') or (difficulty.lower() == 'e'):
+        if difficulty == 3:
             x = 3
             word = random.choice(wordseasy)
             for i in range(2):
                 await gameplay()
 
-        elif (difficulty.lower() == 'medium') or (difficulty.lower() == 'm'):
-            x = 5
+        elif difficulty == 5:
+            x = 4
             word = random.choice(wordsmed)
         elif (difficulty.lower() == 'hard') or (difficulty.lower() == 'h'):
             x = 6
