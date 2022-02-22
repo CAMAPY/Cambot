@@ -23,5 +23,6 @@ class testing(commands.Cog, description = "Test command, speak through the bot!"
         await ctx.send(arg)
         channel = self.client.get_channel(872371310704066633)
         await channel.send(f"{arg}, requested by {ctx.author.name}")
+        print(ctx.author)
 def setup(client):
     client.add_cog(testing(client))
