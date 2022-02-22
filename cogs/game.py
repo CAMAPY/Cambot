@@ -20,6 +20,7 @@ class game(commands.Cog, description = "game?!"):
         async def gameplay():
                 statement = (await self.client.wait_for('message', check = check)).content
                 answer = ''
+                print(word)
                 if statement != word:
                     for j in range(len(statement)):
                         if statement[j] in word:
