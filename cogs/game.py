@@ -43,12 +43,12 @@ class game(commands.Cog, description = "game?!"):
         wordshard = ['abacus', 'baboon', 'babies', 'babble', 'cabbed', 'canned', 'cabbie', 'dabber', 'eager', 'eagles', 'fabled', 'fabric','facade','fables', 'gabble', 'habits', 'hacked', 'hacker'
         'kebabs', 'machos', 'pacify', 'pacing', 'pacers', 'packed', 'rabbit', 'tables', 'tabbed', 'tablas', 'udders','vaccum', 'vacant', 'vacate', 'wackos', 'yachts', 'zaatar']
         wordsmed = []
-        if difficulty == 3:
+        if difficulty == '3':
             x = 3
             word = random.choice(wordseasy)
             for i in range(2):
                 await gameplay()
-        elif (difficulty.lower() == 'hard') or (difficulty.lower() == 'h'):
+        elif difficulty == "6":
             x = 6
             word = random.choice(wordshard)
             for i in range(6):
