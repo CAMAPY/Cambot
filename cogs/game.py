@@ -53,12 +53,16 @@ class game(commands.Cog, description = "game?!"):
             x = 3
             word = random.choice(wordseasy)
             for i in range(2):
+                win = False
                 await gameplay()
+                await checkwin(win)
         elif difficulty == "6":
             x = 6
             word = random.choice(wordshard)
             for i in range(6):
+                win = False
                 await gameplay()
+                await checkwin(win)
         else:
             await ctx.send("That's not a valid length, Please choose either 6 or 3")
 
