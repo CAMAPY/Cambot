@@ -18,6 +18,7 @@ class game(commands.Cog, description = "game?!"):
     @commands.command()
     async def wordle(self, ctx,difficulty):
         async def gameplay():
+                win = False
                 await ctx.send(f'Start guessing a {difficulty} lettered word')
                 statement = (await self.client.wait_for('message', check = check)).content
                 answer = ''
@@ -34,7 +35,12 @@ class game(commands.Cog, description = "game?!"):
                         answer += k
                     await ctx.send(answer)
                 else:
-                    await ctx.send("YOU GOT IT!! ggwp")
+                    win = True
+        async def checkwin(win):
+            if win == True:
+                await ctx.send("Congrats you won! ggwp")
+            else:
+                await ctx.send("Oops, Your out of tries, try again")
         def check(message):
             return message.channel == ctx.channel and len(message.content) ==  x
         await ctx.send("Get ready to rack your brains for epic wordle game!")
