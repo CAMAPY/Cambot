@@ -18,6 +18,7 @@ class game(commands.Cog, description = "game?!"):
     @commands.command()
     async def wordle(self, ctx,difficulty):
         async def gameplay():
+                win = False
                 for i in range(int(difficulty)):
                     statement = (await self.client.wait_for('message', check = check)).content
                     answer = ''
