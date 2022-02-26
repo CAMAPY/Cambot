@@ -46,7 +46,12 @@ class game(commands.Cog, description = "game?!"):
                 await ctx.send("Do you want to continue? (y/n)")
                 choice = (await self.client.wait_for('message', check = check1)).content.lower()
                 if choice == 'y':
+                    await ctx.send("Alright, Start guessing!")
                     await gameplay()
+                elif choice == 'n':
+                    await ctx.send("lol nub, get gud")
+                else:
+                    await ctx.send("y/n, its a simple answer retard")
         def check(message):
             return message.channel == ctx.channel and len(message.content) ==  int(difficulty)
         def check1(message):
