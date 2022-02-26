@@ -69,12 +69,10 @@ class game(commands.Cog, description = "game?!"):
             await ctx.send(f'Start guessing a {difficulty} lettered word')
             win = False 
             await gameplay()
-            await cwin(win)
         elif difficulty == "6":
             word = random.choice(wordshard)
             await ctx.send(f'Start guessing a {difficulty} lettered word')
             await gameplay()
-            await cwin(win)
         else:
             await ctx.send("That's not a valid length, Please choose either 6 or 3")
 
