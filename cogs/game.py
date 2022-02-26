@@ -64,14 +64,14 @@ class game(commands.Cog, description = "game?!"):
             await gameplay()
             if win == False:
                 await cwin(win)
-                replay()
+                await replay()
         elif difficulty == "6":
             word = random.choice(wordshard)
             await ctx.send(f'Start guessing a {difficulty} lettered word')
             await gameplay()
             if win == False:
                 await cwin(win)
-                replay()
+                await replay()
         else:
             await ctx.send("That's not a valid length, Please choose either 6 or 3")
 
