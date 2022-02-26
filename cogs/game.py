@@ -36,12 +36,10 @@ class game(commands.Cog, description = "game?!"):
                         await ctx.send(answer)
                         await ctx.send(f"You've {int(difficulty) - i -1} more tries")
                     else:
-                        win = True
+                        won = True
                         await ctx.send("Congrats you won! ggwp")
                         break
-        async def cwin(win):
-                if win == False:
-                    await ctx.send("Oops, Your out of tries, try again")
+        
         async def replay():
                 await ctx.send("Do you want to continue? (y/n)")
                 choice = (await self.client.wait_for('message', check = check1)).content.lower()
@@ -52,6 +50,10 @@ class game(commands.Cog, description = "game?!"):
                     await ctx.send("lol nub, get gud")
                 else:
                     await ctx.send("y/n, its a simple answer, retard. Stop wasting my time")
+        async def cwin(win):
+                if win == False:
+                    await ctx.send("Oops, Your out of tries, try again")
+                    await replay()
         def check(message):
             return message.channel == ctx.channel and len(message.content) ==  int(difficulty)
         def check1(message):
@@ -67,16 +69,12 @@ class game(commands.Cog, description = "game?!"):
             await ctx.send(f'Start guessing a {difficulty} lettered word')
             win = False 
             await gameplay()
-            if win == False:
-                await cwin(win)
-                await replay()
+            await cwin(win)
         elif difficulty == "6":
             word = random.choice(wordshard)
             await ctx.send(f'Start guessing a {difficulty} lettered word')
             await gameplay()
-            if win == False:
-                await cwin(win)
-                await replay()
+            await cwin(win)
         else:
             await ctx.send("That's not a valid length, Please choose either 6 or 3")
 
