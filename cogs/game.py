@@ -23,7 +23,7 @@ class game(commands.Cog, description = "game?!"):
                     statement = (await self.client.wait_for('message', check = check)).content
                     answer = ''
                     print(word)
-                    if statement != word:
+                    if win == False:
                         for j in range(len(statement)):
                             if statement[j] in word:
                                 if statement[j] in word[j]:
@@ -36,7 +36,6 @@ class game(commands.Cog, description = "game?!"):
                         await ctx.send(answer)
                     else:
                         win = True
-                        break
         async def cwin(win):
                 if win == True:
                     await ctx.send("Congrats you won! ggwp")
@@ -63,7 +62,6 @@ class game(commands.Cog, description = "game?!"):
             await cwin(win)
         else:
             await ctx.send("That's not a valid length, Please choose either 6 or 3")
-
 
 
 def setup(client):
