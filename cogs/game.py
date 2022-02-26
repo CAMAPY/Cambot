@@ -19,48 +19,48 @@ class game(commands.Cog, description = "game?!"):
     async def wordle(self, ctx,difficulty):
         async def gameplay():
                 win = False
-                await ctx.send(f'Start guessing a {difficulty} lettered word')
-                statement = (await self.client.wait_for('message', check = check)).content
-                answer = ''
-                print(word)
-                if statement != word:
-                    for j in range(len(statement)):
-                        if statement[j] in word:
-                            if statement[j] in word[j]:
-                                k = '🟩'
+                for i in range(difficulty):
+                    statement = (await self.client.wait_for('message', check = check)).content
+                    answer = ''
+                    print(word)
+                    if statement != word:
+                        for j in range(len(statement)):
+                            if statement[j] in word:
+                                if statement[j] in word[j]:
+                                    k = '🟩'
+                                else:
+                                    k = '🟨'
                             else:
-                                k = '🟨'
-                        else:
-                            k = '❌'
-                        answer += k
-                    await ctx.send(answer)
-                else:
-                    win = True
-        async def win():
+                                k = '❌'
+                            answer += k
+                        await ctx.send(answer)
+                    else:
+                        win = True
+                        break
+        async def cwin(win):
                 if win == True:
                     await ctx.send("Congrats you won! ggwp")
                 else:
                     await ctx.send("Oops, Your out of tries, try again")
         def check(message):
-            return message.channel == ctx.channel and len(message.content) ==  x
+            return message.channel == ctx.channel and len(message.content) ==  difficulty
         await ctx.send("Get ready to rack your brains for epic wordle game!")
         await ctx.send("Start guessing!")
         wordseasy = ['abs', 'add', 'bag', 'bad', 'cap', 'can', 'cam', 'cad', 'dad', 'dal', 'ear', 'eat', 'eco', 'fam', 'far', 'fan', 'gag', 'had', 'ham', 'ice','icy', 'jar', 'jam']
         wordshard = ['abacus', 'baboon', 'babies', 'babble', 'cabbed', 'canned', 'cabbie', 'dabber', 'eager', 'eagles', 'fabled', 'fabric','facade','fables', 'gabble', 'habits', 'hacked', 'hacker'
         'kebabs', 'machos', 'pacify', 'pacing', 'pacers', 'packed', 'rabbit', 'tables', 'tabbed', 'tablas', 'udders','vaccum', 'vacant', 'vacate', 'wackos', 'yachts', 'zaatar']
-        wordsmed = []
+        win = False
         if difficulty == '3':
-            x = 3
             word = random.choice(wordseasy)
-            for i in range(2):
-                await gameplay()
-            await win()
+            await ctx.send(f'Start guessing a {difficulty} lettered word')
+            win = False 
+            await gameplay()
+            await cwin(win)
         elif difficulty == "6":
-            x = 6
             word = random.choice(wordshard)
-            for i in range(6):
-                await gameplay()
-            await win()
+            await ctx.send(f'Start guessing a {difficulty} lettered word')
+            await gameplay()
+            await cwin(win)
         else:
             await ctx.send("That's not a valid length, Please choose either 6 or 3")
 
