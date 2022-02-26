@@ -37,7 +37,8 @@ class game(commands.Cog, description = "game?!"):
                         await ctx.send(f"You've {len(statement) - j} more tries")
                     else:
                         win = True
-                        await ctx.send(await ctx.send("Congrats you won! ggwp"))
+                        await ctx.send("Congrats you won! ggwp")
+                        break
         async def cwin(win):
                 if win == True:
                     await ctx.send("Congrats you won! ggwp")
