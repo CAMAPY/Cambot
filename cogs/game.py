@@ -19,7 +19,7 @@ class game(commands.Cog, description = "game?!"):
     async def wordle(self, ctx,difficulty):
         async def gameplay():
                 win = False
-                for i in range(difficulty):
+                for i in range(int(difficulty)):
                     statement = (await self.client.wait_for('message', check = check)).content
                     answer = ''
                     print(word)
@@ -43,7 +43,7 @@ class game(commands.Cog, description = "game?!"):
                 else:
                     await ctx.send("Oops, Your out of tries, try again")
         def check(message):
-            return message.channel == ctx.channel and len(message.content) ==  difficulty
+            return message.channel == ctx.channel and len(message.content) ==  int(difficulty)
         await ctx.send("Get ready to rack your brains for epic wordle game!")
         await ctx.send("Start guessing!")
         wordseasy = ['abs', 'add', 'bag', 'bad', 'cap', 'can', 'cam', 'cad', 'dad', 'dal', 'ear', 'eat', 'eco', 'fam', 'far', 'fan', 'gag', 'had', 'ham', 'ice','icy', 'jar', 'jam']
