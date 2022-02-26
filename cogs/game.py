@@ -38,7 +38,8 @@ class game(commands.Cog, description = "game?!"):
                         win = True
                         await ctx.send("Congrats you won! ggwp")
                         break
-        
+                if win == False:
+                    await cwin()
         async def replay():
                 await ctx.send("Do you want to continue? (y/n)")
                 choice = (await self.client.wait_for('message', check = check1)).content.lower()
