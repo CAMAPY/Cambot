@@ -34,14 +34,13 @@ class game(commands.Cog, description = "game?!"):
                                 k = '❌'
                             answer += k
                         await ctx.send(answer)
-                        await ctx.send(f"You've {int(difficulty) - i} more tries")
+                        await ctx.send(f"You've {int(difficulty) - i -1} more tries")
                     else:
+                        win = True
                         await ctx.send("Congrats you won! ggwp")
                         break
         async def cwin(win):
-                if win == True:
-                    await ctx.send("Congrats you won! ggwp")
-                else:
+                if win == False:
                     await ctx.send("Oops, Your out of tries, try again")
         def check(message):
             return message.channel == ctx.channel and len(message.content) ==  int(difficulty)
