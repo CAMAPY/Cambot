@@ -36,11 +36,10 @@ class game(commands.Cog, description = "game?!"):
                     await ctx.send(answer)
                 else:
                     win = True
-        async def checkwin(win):
-            if win == True:
-                await ctx.send("Congrats you won! ggwp")
-            else:
-                await ctx.send("Oops, Your out of tries, try again")
+                if win == True:
+                    await ctx.send("Congrats you won! ggwp")
+                else:
+                    await ctx.send("Oops, Your out of tries, try again")
         def check(message):
             return message.channel == ctx.channel and len(message.content) ==  x
         await ctx.send("Get ready to rack your brains for epic wordle game!")
@@ -55,14 +54,12 @@ class game(commands.Cog, description = "game?!"):
             for i in range(2):
                 win = False
                 await gameplay()
-            await checkwin(win)
         elif difficulty == "6":
             x = 6
             word = random.choice(wordshard)
             for i in range(6):
                 win = False
                 await gameplay()
-            await checkwin(win)
         else:
             await ctx.send("That's not a valid length, Please choose either 6 or 3")
 
