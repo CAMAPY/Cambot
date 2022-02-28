@@ -33,11 +33,11 @@ class game(commands.Cog, description = "game?!"):
                             else:
                                 k = '❌'
                             answer += k
-                        await ctx.send(answer)
-                        await ctx.send(f"You've {int(difficulty) - i -1} more tries")
+                        await statement.reply(answer, mention_author = False)
+                        await statement.reply(f"You've {int(difficulty) - i -1} more tries", mention_author = False)
                     else:
                         win = True
-                        await ctx.send("Congrats you won! ggwp")
+                        await statement.reply("Congrats you won! ggwp", mention_author = False)
                         break
                 if win == False:
                     await cwin(win)
@@ -45,16 +45,16 @@ class game(commands.Cog, description = "game?!"):
                 await ctx.send("Do you want to continue? (y/n)")
                 choice = (await self.client.wait_for('message', check = check1)).content.lower()
                 if choice == 'y':
-                    await ctx.send("Alright, continue guessing!")
+                    await choice.reply("Alright, continue guessing!", mention_author = False)
                     await gameplay()
                 elif choice == 'n':
-                    await ctx.send("lol nub, get gud")
+                    await choice.reply("lol nub, get gud", mention_author = False)
                     return
                 else:
-                    await ctx.send("y/n, its a simple answer, retard. Stop wasting my time")
+                    await choice.reply("y/n, its a simple answer, retard. Stop wasting my time",mention_author = False)
                     return
         async def cwin(win):
-                    await ctx.send("Oops, Your out of tries, try again")
+                    await ctx.send("Oops, You're out of tries, try again")
                     await replay()
         def check(message):
             return message.channel == ctx.channel and len(message.content) ==  int(difficulty)
