@@ -1,3 +1,4 @@
+from email import message
 import discord
 import sys
 from discord.ext import commands
@@ -33,11 +34,11 @@ class game(commands.Cog, description = "game?!"):
                             else:
                                 k = '❌'
                             answer += k
-                        await statement.reply(answer, mention_author = False)
-                        await statement.reply(f"You've {int(difficulty) - i -1} more tries", mention_author = False)
+                        await message.reply(answer, mention_author = False)
+                        await message.reply(f"You've {int(difficulty) - i -1} more tries", mention_author = False)
                     else:
                         win = True
-                        await statement.reply("Congrats you won! ggwp", mention_author = False)
+                        await message.reply("Congrats you won! ggwp", mention_author = False)
                         break
                 if win == False:
                     await cwin(win)
