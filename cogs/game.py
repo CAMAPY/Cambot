@@ -8,7 +8,7 @@ from math import *
 import os
 
 
-class game(commands.Cog, description = "game?!"):
+class gaymes(commands.Cog, description = "games?!"):
 
     def __init__(self,client): 
         self.client = client
@@ -17,7 +17,7 @@ class game(commands.Cog, description = "game?!"):
         print(f'game has been turned on {self.client.user}')
         
     @commands.command()
-    async def wordle(self, ctx,difficulty):
+    async def wordle(self, ctx,difficulty, brief ="Play wordle", help  = "Lose terribly at wordle"):
         async def gameplay():
                 win = False
                 for i in range(int(difficulty)):
@@ -81,4 +81,4 @@ class game(commands.Cog, description = "game?!"):
 
 
 def setup(client):
-    client.add_cog(game(client))
+    client.add_cog(gaymes(client))
