@@ -34,11 +34,11 @@ class game(commands.Cog, description = "game?!"):
                             else:
                                 k = '❌'
                             answer += k
-                        await message.reply(answer, mention_author = False)
-                        await message.reply(f"You've {int(difficulty) - i -1} more tries", mention_author = False)
+                        await ctx.send(answer, mention_author = False)
+                        await ctx.send(f"You've {int(difficulty) - i -1} more tries", mention_author = False)
                     else:
                         win = True
-                        await message.reply("Congrats you won! ggwp", mention_author = False)
+                        await ctx.send("Congrats you won! ggwp", mention_author = False)
                         break
                 if win == False:
                     await cwin(win)
@@ -46,13 +46,13 @@ class game(commands.Cog, description = "game?!"):
                 await ctx.send("Do you want to continue? (y/n)")
                 choice = (await self.client.wait_for('message', check = check1)).content.lower()
                 if choice == 'y':
-                    await choice.reply("Alright, continue guessing!", mention_author = False)
+                    await ctx.send("Alright, continue guessing!", mention_author = False)
                     await gameplay()
                 elif choice == 'n':
-                    await choice.reply("lol nub, get gud", mention_author = False)
+                    await ctx.send("lol nub, get gud", mention_author = False)
                     return
                 else:
-                    await choice.reply("y/n, its a simple answer, retard. Stop wasting my time",mention_author = False)
+                    await ctx.send("y/n, its a simple answer, retard. Stop wasting my time",mention_author = False)
                     return
         async def cwin(win):
                     await ctx.send("Oops, You're out of tries, try again")
