@@ -49,8 +49,10 @@ class game(commands.Cog, description = "game?!"):
                     await gameplay()
                 elif choice == 'n':
                     await ctx.send("lol nub, get gud")
+                    return
                 else:
                     await ctx.send("y/n, its a simple answer, retard. Stop wasting my time")
+                    return
         async def cwin(win):
                     await ctx.send("Oops, Your out of tries, try again")
                     await replay()
@@ -68,10 +70,12 @@ class game(commands.Cog, description = "game?!"):
             await ctx.send(f'Start guessing a {difficulty} lettered word')
             win = False 
             await gameplay()
+            await ctx.send(f"The answer was {word}")
         elif difficulty == "6":
             word = random.choice(wordshard)
             await ctx.send(f'Start guessing a {difficulty} lettered word')
             await gameplay()
+            await ctx.send(f"The answer was {word}")
         else:
             await ctx.send("That's not a valid length, Please choose either 6 or 3")
 
