@@ -16,8 +16,8 @@ class gaymes(commands.Cog, description = "games?!"):
     async def on_ready(self):
         print(f'game has been turned on {self.client.user}')
         
-    @commands.command()
-    async def wordle(self, ctx,difficulty, brief ="Play wordle", help  = "Lose terribly at wordle"):
+    @commands.command(brief ="Play wordle", help  = "Lose terribly at wordle")
+    async def wordle(self, ctx,difficulty):
         async def gameplay():
                 win = False
                 for i in range(int(difficulty)):
