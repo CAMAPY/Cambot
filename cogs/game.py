@@ -20,7 +20,7 @@ class game(commands.Cog, description = "game?!"):
         async def gameplay():
                 win = False
                 for i in range(int(difficulty)):
-                    statement = (await self.client.wait_for('message', check = check)).content
+                    statement = (await self.client.wait_for('message', check = check)).content.lower()
                     answer = ''
                     print(word)
                     if statement != word:
@@ -45,7 +45,7 @@ class game(commands.Cog, description = "game?!"):
                 await ctx.send("Do you want to continue? (y/n)")
                 choice = (await self.client.wait_for('message', check = check1)).content.lower()
                 if choice == 'y':
-                    await ctx.send("Alright, Start guessing!")
+                    await ctx.send("Alright, continue guessing!")
                     await gameplay()
                 elif choice == 'n':
                     await ctx.send("lol nub, get gud")
@@ -57,12 +57,12 @@ class game(commands.Cog, description = "game?!"):
         def check(message):
             return message.channel == ctx.channel and len(message.content) ==  int(difficulty)
         def check1(message):
-            return message.channel == ctx.channel
+            return message.channel == ctx.channel and message.author == ctx.author
         await ctx.send("Get ready to rack your brains for epic wordle game!")
         await ctx.send("Start guessing!")
         wordseasy = ['abs', 'add', 'bag', 'bad', 'cap', 'can', 'cam', 'cad', 'dad', 'dal', 'ear', 'eat', 'eco', 'fam', 'far', 'fan', 'gag', 'had', 'ham', 'ice','icy', 'jar', 'jam']
         wordshard = ['abacus', 'baboon', 'babies', 'babble', 'cabbed', 'canned', 'cabbie', 'dabber', 'eager', 'eagles', 'fabled', 'fabric','facade','fables', 'gabble', 'habits', 'hacked', 'hacker'
-        'kebabs', 'machos', 'pacify', 'pacing', 'pacers', 'packed', 'rabbit', 'tables', 'tabbed', 'tablas', 'udders','vaccum', 'vacant', 'vacate', 'wackos', 'yachts', 'zaatar']
+        'kebabs', 'machos', 'pacify', 'pacing', 'pacers', 'packed', 'rabbit', 'tables', 'tabbed', 'tablas', 'udders','vacuum', 'vacant', 'vacate', 'wackos', 'yachts', 'zaatar']
         win = False
         if difficulty == '3':
             word = random.choice(wordseasy)
