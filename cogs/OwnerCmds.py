@@ -49,11 +49,12 @@ class OwnerCommands(commands.Cog, description = "Commands for daddy :weary:"):
         print("Ok bye! :wave:")
 
     @commands.command(hidden = True)
-    @commands.is_owner()
+    
     async def talk(self,ctx,*, arg):
-        await ctx.send("lol")
-        channel = self.client.get_channel(874866927938449471)
-        await channel.send(f"{arg}")
+        if ctx.author.id == 783631828882948108:
+            await ctx.send("lol")
+            channel = self.client.get_channel(874866927938449471)
+            await channel.send(f"{arg}")
     
     @commands.command(name="toggle", description="Enable or disable a command!")
     @commands.is_owner()
