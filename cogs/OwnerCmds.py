@@ -50,10 +50,10 @@ class OwnerCommands(commands.Cog, description = "Commands for daddy :weary:"):
 
     @commands.command(hidden = True)
     
-    async def talk(self,ctx,*, arg):
+    async def talk(self,ctx,*,channel, arg):
         if ctx.author.id == 783631828882948108:
 
-            channel = self.client.get_channel(929928867039309824)
+            channel = self.client.get_channel(int(channel))
             await channel.send(f"{arg}")
             await ctx.send("lol")
     
