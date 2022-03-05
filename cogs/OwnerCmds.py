@@ -37,7 +37,6 @@ class OwnerCommands(commands.Cog, description = "Commands for daddy :weary:"):
         await self.client.user.edit(username=name)
 
     @commands.command(aliases = ["s"],hidden =True)
-    @commands.is_owner()
     async def status(self, ctx, *, status=''):            #im the 
         await self.client.change_presence(status=discord.Status.online, activity=discord.Game(status))
         await ctx.send(f'launching {status}.')
