@@ -17,7 +17,7 @@ async def on_ready():
 
     
 
-@client.command(brief= "Checks bot's ping", hidden = True)
+@client.command(brief= "Checks bot's ping")
 async def ping(ctx):
     print("Pong")
     await ctx.send('The ping\'s at {0} ms'.format(round(client.latency, 10) *1000))
