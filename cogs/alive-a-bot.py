@@ -58,10 +58,6 @@ class aliveabot(commands.Cog, description = "Responses that make the bot seem al
         elif "what the fuck did you just fucking say about me, you little bitch?" in message.content.lower():
             await message.reply(f"stop. posting. this. it isn't funny, {message.author.mention}", mention_author = False)
             await message.delete()
-        elif "cain" in message.content.lower():
-            n = random.randrange(1, 100)
-            if n >95:
-                await message.reply(f"fucking prick, isnt he", mention_author = False)
         elif "united states marine corps" in message.content.lower():
             await message.reply(f"nice try dumbass, {message.author.mention}", mention_author = False)
             await message.delete()
