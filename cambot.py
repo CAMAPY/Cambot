@@ -31,7 +31,8 @@ async def calculate(ctx,*,expression):
 
 @client.command(aliases = ['dm'])
 async def message(user: discord.Member, *, content):
-    await user.send(content)
+    kick = discord.Embed(title=f"You've a message ;)", description=f"{content}\nBy: {message.author.mention}")
+    await user.send(embed = kick)
 @client.command(hidden =True)
 @commands.is_owner()
 async def load(ctx, extension):
