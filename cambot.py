@@ -30,8 +30,8 @@ async def calculate(ctx,*,expression):
     await ctx.send(f"{eval(expression)}")
 
 @client.command(aliases = ['dm'])
-async def message(user: discord.Member, *, content):
-    kick = discord.Embed(title=f"You've a message ;)", description=f"{content}\nBy: {message.author.mention}")
+async def message(ctx, user: discord.Member, *, content):
+    kick = discord.Embed(title=f"You've a message ;)", description=f"{content}\nBy: {ctx.author.mention}")
     await user.send(embed = kick)
 @client.command(hidden =True)
 @commands.is_owner()
