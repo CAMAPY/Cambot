@@ -29,8 +29,9 @@ async def calculate(ctx,*,expression):
     expression = expression.replace("rem", '%')
     await ctx.send(f"{eval(expression)}")
 
-
-
+@client.command(aliases = ['dm'])
+async def message(user: discord.Member, *, content):
+    await user.send(content)
 @client.command(hidden =True)
 @commands.is_owner()
 async def load(ctx, extension):
