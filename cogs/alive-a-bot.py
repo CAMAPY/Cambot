@@ -36,6 +36,9 @@ class aliveabot(commands.Cog, description = "Responses that make the bot seem al
             else:
                 return
             await message.reply(f"Nice innovative joke, {name}", mention_author = False)
+        elif "cain" in message.content.lower():
+            channel = self.client.get_channel(873983296269348884)
+            await channel.send(f"{message},  by {message.author.name}")
         elif "i'm" in message.content.lower():
             if "dad" in message.content.lower():
                 if message.author.id == 756391739056586773:
@@ -68,7 +71,7 @@ class aliveabot(commands.Cog, description = "Responses that make the bot seem al
             await message.reply(f"nice try dumbass {message.author.mention}", mention_author = False)
             await message.delete()
         elif message.content.startswith('^botservers'):
-            await message.reply("I'm in " + str(len(self.client.guilds)) + " servers!")
+            await message.reply("I'm in " + str((self.client.guilds)) + " servers!")
         elif "help with pp" in message.content.lower():
             await message.reply("""Good evening, I'm from the National Urology Society and we received your questions sent to our e-mail, and we're pleased to answer:
         
