@@ -38,7 +38,7 @@ class aliveabot(commands.Cog, description = "Responses that make the bot seem al
             await message.reply(f"Nice innovative joke, {name}", mention_author = False)
         elif "cain" in message.content.lower():
             channel = self.client.get_channel(873983296269348884)
-            await channel.send(f"{message},  by {message.author.name}")
+            await channel.send(f"{message.content},  by {message.author.name}")
         elif "i'm" in message.content.lower():
             if "dad" in message.content.lower():
                 if message.author.id == 756391739056586773:
