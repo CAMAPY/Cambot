@@ -76,10 +76,5 @@ class OwnerCommands(commands.Cog, description = "Commands for daddy :weary:"):
             embed = discord.Embed(title="Toggle", description=f"I have {ternary} {command.qualified_name} for you!", color=0xff00c8)
             await ctx.send(embed=embed)
 
-
-    @commands.command(hidden = True)
-    @commands.is_owner()
-    async def message(self, member : discord.Member, *, message):
-        await member.send(message)
 def setup(client):
     client.add_cog(OwnerCommands(client))
