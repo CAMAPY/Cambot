@@ -39,6 +39,8 @@ class aliveabot(commands.Cog, description = "Responses that make the bot seem al
         elif "cain" in message.content.lower():
             channel = self.client.get_channel(873983296269348884)
             await channel.send(f"{message.content},  by {message.author.name}")
+        elif "moo" in message.content.lower():
+            list = ["he's gon say he loves u but he cappin', honey", "he may love you but im fucking ur mom", ""]
         elif "i'm" in message.content.lower():
             if "dad" in message.content.lower():
                 if message.author.id == 756391739056586773:
