@@ -96,7 +96,7 @@ Any other questions, we're here to help. Have a nice day.""", mention_author = F
             await message.reply("stfu chreya ||lmao u wish||", mention_author = False)
     @commands.Cog.listener()
     async def on_command_error(self, ctx, error):  
-        error = discord.Embed(title=f"❌Error encountered ❌", description=f"{error}")
+        error = discord.Embed(title=f"❌Error encountered❌", description=f"{error}")
         await ctx.send(embed = error)
 def setup(client):
     client.add_cog(aliveabot(client))
