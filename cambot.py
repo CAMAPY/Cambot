@@ -34,7 +34,7 @@ async def calculate(ctx,*,expression):
     elif (expression.count('**') > 1) or (expression.count('*') > 1) or (expression.count('^') > 1) or (expression.count('x') > 1):
         await ctx.send("Please just let me live")
         return
-    elif ('999' in expression.split('**')[0]) or ('999' in expression.split('**')[-1]):
+    elif (999 < int(expression.split('**')[0])) or (999 < int(expression.split('**')[-1])):
         await ctx.send("ok man, daddy fixed me")
         return
     elif ('999' in expression.split('*')[0]) or ('999' in expression.split('*')[-1]):
