@@ -50,7 +50,7 @@ class OwnerCommands(commands.Cog, description = "Commands for daddy :weary:"):
 
     @commands.command(hidden = True)
     @commands.is_owner()
-    async def talk(self,ctx,channel,*, arg):
+    async def talk(self,ctx,channel = '929928867039309824',*, arg):
             print(channel)
             channel = self.client.get_channel(int(channel))
             await channel.send(f"{arg}")

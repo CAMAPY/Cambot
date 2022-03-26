@@ -24,7 +24,7 @@ class moderation(commands.Cog, description = "Moderators moderating around"):
             await ctx.message.delete()
             await ctx.channel.send(embed=kick)
             await user.send(embed=kick)
-            if isinstance(error, commands.MissingPermissions):
+            if isinstance(error, commands.errors.MissingPermissions):
                 error = discord.Embed(title=f"I can't do that, {ctx.name}", description=f"You don't have admin.")
                 await ctx.send("You don't the permissions to do that buddy. :pensive:")
 
