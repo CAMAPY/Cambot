@@ -24,9 +24,14 @@ async def ping(ctx):
 
 @client.command(aliases=['calc'],brief="It calculates....no-brainer really", help = "Operations include: '+', '-', '*', '/','**', '^','sqrt','log','abs', '%','cmp','log10', 'pow', '//', 'factorial', 'ceil', 'copysign', 'fabs' , 'floor', 'fmod', 'frexp', 'fsumi', 'isinfinite', 'isinf', 'isnan', 'ldexp', 'modf', 'trunc', 'exp', 'expm1', 'log1p', 'log2', 'acos', 'asin', 'atan', 'atan2', 'cos', 'hypot', 'sin', 'tan', 'degrees', 'radians', 'acosh', 'asinh', 'atanh', 'cosh', 'sinh', 'tanh', 'erf', 'erfc', 'gamma', 'lgamma', 'pi', 'e'")
 async def calculate(ctx,*,expression):
+    print(expression.split('*'))
+    print(expression.split('^'))
+    print(expression.split('**'))
+    print(expression.split('x'))
     if ("for" in expression) or ("while" in expression):
         await ctx.send("nt u sunuvabich")
         return
+    
     elif 99999 in expression.split('*'):
         return
     elif 99999 in expression.split('^'):
