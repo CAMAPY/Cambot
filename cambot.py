@@ -51,7 +51,8 @@ async def calculate(ctx,*,expression):
         elif ('999' in expression.split('x')[0]) or ('999' in expression.split('x')[-1]):
             await ctx.send("ok man, daddy fixed me")
             return
-    
+    elif (int(expression.split("(")[-1][:-1])) > 999:
+        await ctx.send("bitch i can find where u live")
     await ctx.send(f"{eval(expression)}")
 
 @client.command(aliases = ['dm'])
