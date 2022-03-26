@@ -24,22 +24,14 @@ class moderation(commands.Cog, description = "Moderators moderating around"):
             await ctx.message.delete()
             await ctx.channel.send(embed=kick)
             await user.send(embed=kick)
-    @kick.error
-    async def kick_error(self, ctx: commands.Context, error: commands.CommandError):
-        if isinstance(error, commands.MissingPermissions):
-            error = discord.Embed(title=f"I can't do that, {ctx.author.name}", description=f"You don't have admin.")
-            await ctx.send(embed = error)
+
 
     @commands.command(brief ="Bans members", help  ="Bans members")
     @commands.has_permissions(administrator=True)
     async def ban(self,ctx, member : discord.Member, *, reason = None):
         await member.ban(reason = reason)
         await ctx.send(f'Banned {member.mention}')
-    @ban.error
-    async def ban_error(self, ctx: commands.Context, error: commands.CommandError):
-        if isinstance(error, commands.MissingPermissions):
-            error = discord.Embed(title=f"I can't do that, {ctx.author.name}", description=f"You don't have admin.")
-            await ctx.send(embed = error)
+
     
     @commands.command(pass_context=True, brief = "Deletes multiple messages", help = 'Delete multiple messages (needs admin permissions)')
     @commands.has_permissions(administrator=True)
@@ -47,22 +39,14 @@ class moderation(commands.Cog, description = "Moderators moderating around"):
             await ctx.channel.purge(limit=limit)
             await ctx.send('Messages cleared by {}'.format(ctx.author.mention))
             await ctx.message.delete()
-    @purge.error
-    async def purge_error(self, ctx: commands.Context, error: commands.CommandError):
-        if isinstance(error, commands.MissingPermissions):
-            error = discord.Embed(title=f"I can't do that, {ctx.author.name}", description=f"You don't have admin.")
-            await ctx.send(embed = error)
+
 
     @commands.command(pass_context=True, brief="Changes nick of people", help = "Changes nick of people")
     @commands.has_permissions(manage_nicknames=True)
     async def nick(self, ctx, member: MemberConverter, nick):
         await member.edit(nick=nick)
         await ctx.send(f'Nickname was changed for `@{member.name}` ')
-    @nick.error
-    async def nick_error(self, ctx: commands.Context, error: commands.CommandError):
-        if isinstance(error, commands.MissingPermissions):
-            error = discord.Embed(title=f"I can't do that, {ctx.author.name}", description=f"You don't have admin.")
-            await ctx.send(embed = error)
+    
 
 def setup(client):
     client.add_cog(moderation(client))
