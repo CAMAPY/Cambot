@@ -31,16 +31,15 @@ async def calculate(ctx,*,expression):
     if ("for" in expression) or ("while" in expression):
         await ctx.send("nt u sunuvabich")
         return
-    elif '999' in expression.split('*'):
+    elif ('999' in expression.split('**')[0]) or ('999' in expression.split('**')[-1]):
+        print("true")
+    elif ('999' in expression.split('*')[0]) or ('999' in expression.split('*')[-1]):
         print('true')
         return
-    elif '999' in expression.split('^'):
+    elif ('999' in expression.split('^')[0]) or ('999' in expression.split('^')[-1]):
         print("true")
         return 
-    elif '999' in expression.split('**'):
-        print("true")
-        return
-    elif '999' in expression.split('x'):
+    elif ('999' in expression.split('x')[0]) or ('999' in expression.split('x')[-1]):
         print("true")
         return
     expression = expression.replace("^","**")   
