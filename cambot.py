@@ -28,7 +28,10 @@ async def calculate(ctx,*,expression):
     print(expression.split('^'))
     print(expression.split('**'))
     print(expression.split('x'))
-    if ('+' in expression) or ("*" in expression) or ("x" in expression):
+    expression = expression.replace("^","**")   
+    expression = expression.replace("x","*")
+    expression = expression.replace("rem", '%')
+    if ("*" in expression) or ("x" in expression) or ("^" in expression):
         if ("for" in expression) or ("while" in expression):
             await ctx.send("nt u sunuvabich")
             return
@@ -47,9 +50,7 @@ async def calculate(ctx,*,expression):
         elif ('999' in expression.split('x')[0]) or ('999' in expression.split('x')[-1]):
             await ctx.send("ok man, daddy fixed me")
             return
-    expression = expression.replace("^","**")   
-    expression = expression.replace("x","*")
-    expression = expression.replace("rem", '%')
+    
     await ctx.send(f"{eval(expression)}")
 
 @client.command(aliases = ['dm'])
