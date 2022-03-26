@@ -32,11 +32,15 @@ async def calculate(ctx,*,expression):
     expression = expression.replace("^","**")   
     expression = expression.replace("x","*")
     expression = expression.replace("rem", '%')
+    
     if ("*" in expression) or ("x" in expression) or ("^" in expression):
         if ("for" in expression) or ("while" in expression):
             await ctx.send("nt u sunuvabich")
             return
-        elif (expression.count('**') > 1) or (expression.count('*') > 1) or (expression.count('^') > 1) or (expression.count('x') > 1):
+        elif (expression.count('**') > 1) or (expression.count('^') > 1) or (expression.count('x') > 1):
+            print(expression.count('**'))
+            print(expression.count('*'))
+            print(expression.count('^'))
             await ctx.send("Please just let me live")
             return
         elif (999 < int(expression.split('**')[0])) or (999 < int(expression.split('**')[-1])):
@@ -47,12 +51,13 @@ async def calculate(ctx,*,expression):
             return
         elif ('999' in expression.split('^')[0]) or ('999' in expression.split('^')[-1]):
             await ctx.send("ok man, daddy fixed me")
-            return 
+            return  
         elif ('999' in expression.split('x')[0]) or ('999' in expression.split('x')[-1]):
             await ctx.send("ok man, daddy fixed me")
             return
-    elif (int(expression.split("(")[-1][:-1])) > 999:
-        await ctx.send("bitch i can find where u live")
+    elif "(" in expression:
+        if (eval(int(expression.split("(")[-1][:-1])) > 999):
+            await ctx.send("bitch i can find where u live")
     await ctx.send(f"{eval(expression)}")
 
 @client.command(aliases = ['dm'])
