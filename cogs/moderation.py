@@ -24,11 +24,9 @@ class moderation(commands.Cog, description = "Moderators moderating around"):
             await ctx.message.delete()
             await ctx.channel.send(embed=kick)
             await user.send(embed=kick)
-    @kick.error
-    async def kick_error(self, ctx, error):
-        if isinstance(self, error, commands.MissingPermissions):
-            error = discord.Embed(title=f"I can't do that, {ctx.name}", description=f"You don't have admin.")
-            await ctx.send("You don't the permissions to do that buddy. :pensive:")
+            if isinstance(self, error, commands.MissingPermissions):
+                error = discord.Embed(title=f"I can't do that, {ctx.name}", description=f"You don't have admin.")
+                await ctx.send("You don't the permissions to do that buddy. :pensive:")
 
     @commands.command(brief ="Bans members", help  ="Bans members")
     @commands.has_permissions(administrator=True)
