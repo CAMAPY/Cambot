@@ -38,7 +38,7 @@ class moderation(commands.Cog, description = "Moderators moderating around"):
     async def purge(self, ctx, limit: int):
             await ctx.channel.purge(limit=limit)
             await ctx.send('Messages cleared by {}'.format(ctx.author.mention))
-            await ctx.message.delete()
+
 
 
     @commands.command(pass_context=True, brief="Changes nick of people", help = "Changes nick of people")
