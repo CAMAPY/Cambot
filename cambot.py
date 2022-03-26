@@ -26,6 +26,15 @@ async def ping(ctx):
 async def calculate(ctx,*,expression):
     if ("for" in expression) or ("while" in expression):
         await ctx.send("nt u sunuvabich")
+        return
+    elif 99999 in expression.split('*'):
+        return
+    elif 99999 in expression.split('^'):
+        return 
+    elif 99999 in expression.split('**'):
+        return
+    elif 99999 in expression.split('x'):
+        return
     expression = expression.replace("^","**")   
     expression = expression.replace("x","*")
     expression = expression.replace("rem", '%')
