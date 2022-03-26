@@ -14,7 +14,8 @@ client = commands.Bot(command_prefix = ';', intents=intents, help_command=Pretty
 @client.event
 async def on_ready():
     print(f'Logged on as {client.user}')
-
+    channel = client.get_channel(872371310704066633)
+    await channel.send(f"im turned on")
     
 
 @client.command(brief= "Checks bot's ping")
