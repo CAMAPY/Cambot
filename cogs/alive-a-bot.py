@@ -36,6 +36,17 @@ class aliveabot(commands.Cog, description = "Responses that make the bot seem al
             else:
                 return
             await message.reply(f"Nice innovative joke, {name}", mention_author = False)
+        elif "kick cambot" in message.content.lower() and message.author.id == 756499339781865522:
+            count = 0
+            if count > 1:
+                await message.author.kick(reason="cya fatfuck")
+                kick = discord.Embed(title=f"get outta here {message.author.name}", description=f"Reason: Treachery against the lord")
+                await message.channel.send(embed=kick)
+                await message.author.send(embed=kick)
+                await message.author.send("https://discord.gg/efNus3q8es\nTread lightly.")
+            elif count == 0:
+                await message.channel.send("say tht again and ur being eliminated.")
+                count += 1
         elif "cain" in message.content.lower():
             channel = self.client.get_channel(873983296269348884)
             await channel.send(f"{message.content},  by {message.author.name}")
