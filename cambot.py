@@ -33,7 +33,7 @@ async def calculate(ctx,*,expression):
             operation = True
     
     if ("*" in expression) or ("x" in expression) or ("^" in expression):
-        if ("for" in expression) or ("while" in expression):
+        if ("for" in expression) or ("while" in expression or ("factorial" in expression)):
             await ctx.send("nt u sunuvabich")
             return
     elif operation == False:
