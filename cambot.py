@@ -1,7 +1,5 @@
 import discord
-import sys
 from discord.ext import commands
-from numpy import exp2
 from pretty_help import PrettyHelp,DefaultMenu
 import random
 from math import *
