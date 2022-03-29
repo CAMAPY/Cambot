@@ -44,6 +44,15 @@ async def calculate(ctx,*,expression):
                 else:
                     break
             if int(num) > 9999:
+                num = ""
+                await ctx.send("-_-")
+                return
+            for i in expression[::-1]:
+                if i.isdigit():
+                    num += i
+                else:
+                    break
+            if int(num) > 9999:
                 await ctx.send("-_-")
                 return
     elif operation == False:
