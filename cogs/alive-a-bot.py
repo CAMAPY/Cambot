@@ -18,8 +18,7 @@ class aliveabot(commands.Cog, description = "Responses that make the bot seem al
 
     @commands.Cog.listener()
     async def on_message(self, message): 
-        count = False
-        print(count)
+
         if message.author == self.client.user:
             return 
         elif message.content.startswith(";t"):
