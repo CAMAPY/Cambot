@@ -36,6 +36,16 @@ async def calculate(ctx,*,expression):
         if ("for" in expression) or ("while" in expression or ("factorial" in expression)):
             await ctx.send("nt u sunuvabich")
             return
+        else:
+            num = ""
+            for i in expression:
+                if i.isdigit():
+                    num += i
+                else:
+                    break
+            if num > 9999:
+                await ctx.send("-_-")
+                return
     elif operation == False:
         await ctx.send("Please enter a valid operation")
     await ctx.send(f"{eval(expression)}")
