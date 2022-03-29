@@ -8,15 +8,18 @@ import os
 
 
 class aliveabot(commands.Cog, description = "Responses that make the bot seem alive"):
-
     def __init__(self,client): 
         self.client = client
     @commands.Cog.listener()
     async def on_ready(self):
         print(f'I has been turned on {self.client.user}')
+        global count
+        count = False
 
     @commands.Cog.listener()
     async def on_message(self, message): 
+        count = False
+        print(count)
         if message.author == self.client.user:
             return 
         elif message.content.startswith(";t"):
@@ -36,17 +39,7 @@ class aliveabot(commands.Cog, description = "Responses that make the bot seem al
             else:
                 return
             await message.reply(f"Nice innovative joke, {name}", mention_author = False)
-        elif "kick cambot" in message.content.lower() and message.author.id == 756499339781865522:
-            count = 0
-            if count > 1:
-                await message.author.kick(reason="cya fatfuck")
-                kick = discord.Embed(title=f"get outta here {message.author.name}", description=f"Reason: Treachery against the lord")
-                await message.channel.send(embed=kick)
-                await message.author.send(embed=kick)
-                await message.author.send("https://discord.gg/efNus3q8es\nTread lightly.")
-            elif count == 0:
-                await message.channel.send("say tht again and ur being eliminated.")
-                count += 1
+        
         elif "cain" in message.content.lower():
             channel = self.client.get_channel(873983296269348884)
             await channel.send(f"{message.content},  by {message.author.name}")
@@ -101,8 +94,8 @@ Any other questions, we're here to help. Have a nice day.""", mention_author = F
             await message.reply("stfu chreya", mention_author = False)
         elif "kanopy" in message.content.lower() and message.author.id == 780498861713653780:
             await message.reply("stfu chreya ||lmao u wish||", mention_author = False)
-    @commands.Cog.listener()
-    async def on_command_error(self, ctx, error):  
+@commands.Cog.listener()
+async def on_command_error(self, ctx, error):  
         error = str(error).split(":")[-1]
         error = discord.Embed(title=f"❌Error encountered❌", description=f"{error}", colour = 0x660000) 
         await ctx.send(embed = error)
