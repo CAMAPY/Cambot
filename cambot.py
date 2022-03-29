@@ -43,15 +43,20 @@ async def calculate(ctx,*,expression):
                     num += i
                 else:
                     break
+            print(num)
             if int(num) > 9999:
                 num = ""
                 await ctx.send("-_-")
                 return
+            num = ""
+            print("ok bro", expression[::-1])
             for i in expression[::-1]:
                 if i.isdigit():
                     num += i
+                    print(num)
                 else:
                     break
+            print(num)
             if int(num[::-1]) > 9999:
                 await ctx.send("-_-")
                 return
