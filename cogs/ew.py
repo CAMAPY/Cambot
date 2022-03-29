@@ -49,6 +49,11 @@ class ew(commands.Cog, description = "ew is cringe"):
                 avatar_url=message.author.avatar_url,
                 wait=True,
             )
+    @commands.Cog.listener()
+    async def on_command_error(self, ctx, error):  
+            error = str(error).split(":")[-1]
+            error = discord.Embed(title=f"❌Error encountered❌", description=f"{error}", colour = 0x660000) 
+            await ctx.send(embed = error)
     @commands.command(aliases = [')'], hidden = True)
     async def wink():
         pass

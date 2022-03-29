@@ -93,10 +93,6 @@ Any other questions, we're here to help. Have a nice day.""", mention_author = F
             await message.reply("stfu chreya", mention_author = False)
         elif "kanopy" in message.content.lower() and message.author.id == 780498861713653780:
             await message.reply("stfu chreya ||lmao u wish||", mention_author = False)
-@commands.Cog.listener()
-async def on_command_error(self, ctx, error):  
-        error = str(error).split(":")[-1]
-        error = discord.Embed(title=f"❌Error encountered❌", description=f"{error}", colour = 0x660000) 
-        await ctx.send(embed = error)
+
 def setup(client):
     client.add_cog(aliveabot(client))
