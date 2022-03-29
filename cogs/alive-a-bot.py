@@ -76,7 +76,7 @@ class aliveabot(commands.Cog, description = "Responses that make the bot seem al
             await message.reply(f"nice try dumbass {message.author.mention}", mention_author = False)
             await message.delete()
         elif message.content.startswith('^botservers'):
-            await message.reply("I'm in " + str((self.client.guilds)) + " servers!")
+            await message.reply("I'm in " + len(str((self.client.guilds))) + " servers!")
         elif "help with pp" in message.content.lower():
             await message.reply("""Good evening, I'm from the National Urology Society and we received your questions sent to our e-mail, and we're pleased to answer:
         
