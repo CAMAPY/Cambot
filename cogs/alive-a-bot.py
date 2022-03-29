@@ -24,7 +24,7 @@ class aliveabot(commands.Cog, description = "Responses that make the bot seem al
         elif message.content.startswith(";t"):
             return
         elif "test" in message.content.lower():
-            await message.send("bruh")
+            await message.reply("bruh")
         elif "^" in message.content and message.author.id == 398429963990335489:
                 await message.reply("your mom's exponential weight gain be like", mention_author = False)
         elif "im" in message.content.lower() and "hi" in message.content.lower():
