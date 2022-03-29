@@ -49,7 +49,8 @@ class ew(commands.Cog, description = "ew is cringe"):
                 avatar_url=message.author.avatar_url,
                 wait=True,
             )
-    
-
+    @commands.command(aliases = [')'], hidden = True)
+    async def wink():
+        pass
 def setup(client):
     client.add_cog(ew(client))  
