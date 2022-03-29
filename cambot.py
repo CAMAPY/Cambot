@@ -1,6 +1,7 @@
 import discord
 import sys
 from discord.ext import commands
+from numpy import exp2
 from pretty_help import PrettyHelp,DefaultMenu
 import random
 from math import *
@@ -25,39 +26,20 @@ async def ping(ctx):
 
 @client.command(aliases=['calc'],brief="It calculates....no-brainer really", help = "Operations include: '+', '-', '*', '/','**', '^','sqrt','log','abs', '%','cmp','log10', 'pow', '//', 'factorial', 'ceil', 'copysign', 'fabs' , 'floor', 'fmod', 'frexp', 'fsumi', 'isinfinite', 'isinf', 'isnan', 'ldexp', 'modf', 'trunc', 'exp', 'expm1', 'log1p', 'log2', 'acos', 'asin', 'atan', 'atan2', 'cos', 'hypot', 'sin', 'tan', 'degrees', 'radians', 'acosh', 'asinh', 'atanh', 'cosh', 'sinh', 'tanh', 'erf', 'erfc', 'gamma', 'lgamma', 'pi', 'e'")
 async def calculate(ctx,*,expression):
-    print(expression.split('*'))
-    print(expression.split('^'))
-    print(expression.split('**'))
-    print(expression.split('x'))
+    operation  = False
     expression = expression.replace("^","**")   
     expression = expression.replace("x","*")
     expression = expression.replace("rem", '%')
+    for i in [ '+', '-', '*', '/','**', '^','sqrt','log','abs', '%','cmp','log10', 'pow', '//', 'factorial', 'ceil', 'copysign', 'fabs' , 'floor', 'fmod', 'frexp', 'fsumi', 'isinfinite', 'isinf', 'isnan', 'ldexp', 'modf', 'trunc', 'exp', 'expm1', 'log1p', 'log2', 'acos', 'asin', 'atan', 'atan2', 'cos', 'hypot', 'sin', 'tan', 'degrees', 'radians', 'acosh', 'asinh', 'atanh', 'cosh', 'sinh', 'tanh', 'erf', 'erfc', 'gamma', 'lgamma', 'pi', 'e']:
+        if i in expression:
+            operation = True
     
     if ("*" in expression) or ("x" in expression) or ("^" in expression):
         if ("for" in expression) or ("while" in expression):
             await ctx.send("nt u sunuvabich")
             return
-        elif (expression.count('**') > 1) or (expression.count('^') > 1) or (expression.count('x') > 1):
-            print(expression.count('**'))
-            print(expression.count('*'))
-            print(expression.count('^'))
-            await ctx.send("Please just let me live")
-            return
-        elif (999 < int(expression.split('**')[0])) or (999 < int(expression.split('**')[-1])):
-            await ctx.send("ok man, daddy fixed me")
-            return
-        elif ('999' in expression.split('*')[0]) or ('999' in expression.split('*')[-1]):
-            await ctx.send("ok man, daddy fixed me")
-            return
-        elif ('999' in expression.split('^')[0]) or ('999' in expression.split('^')[-1]):
-            await ctx.send("ok man, daddy fixed me")
-            return  
-        elif ('999' in expression.split('x')[0]) or ('999' in expression.split('x')[-1]):
-            await ctx.send("ok man, daddy fixed me")
-            return
-    elif "(" in expression:
-        if (eval(int(expression.split("(")[-1][:-1])) > 999):
-            await ctx.send("bitch i can find where u live")
+    elif operation == False:
+        await ctx.send("Please enter a valid operation")
     await ctx.send(f"{eval(expression)}")
 
 @client.command(aliases = ['dm'])
