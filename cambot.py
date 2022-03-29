@@ -43,7 +43,7 @@ async def calculate(ctx,*,expression):
                     num += i
                 else:
                     break
-            if num > 9999:
+            if int(num) > 9999:
                 await ctx.send("-_-")
                 return
     elif operation == False:
